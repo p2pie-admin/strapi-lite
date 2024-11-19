@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_parameters",
+  "info": {
+    "singularName": "top-parameter",
+    "pluralName": "top-parameters",
+    "displayName": "Top Parameter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "parameter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "exchanger.parameter"
+    },
+    "en_name": {
+      "type": "string",
+      "maxLength": 18
+    },
+    "ru_name": {
+      "type": "string",
+      "maxLength": 18
+    }
+  }
+}

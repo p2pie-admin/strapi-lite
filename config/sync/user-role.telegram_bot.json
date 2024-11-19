@@ -1,0 +1,91 @@
+{
+  "name": "telegram_bot",
+  "description": "Telegrab Bot",
+  "type": "telegram_bot",
+  "permissions": [
+    {
+      "action": "api::currency.currency.find"
+    },
+    {
+      "action": "api::currency.currency.findOne"
+    },
+    {
+      "action": "api::direction-parameter.direction-parameter.find"
+    },
+    {
+      "action": "api::direction-parameter.direction-parameter.findOne"
+    },
+    {
+      "action": "api::exchanger-parameter.exchanger-parameter.find"
+    },
+    {
+      "action": "api::exchanger-parameter.exchanger-parameter.findOne"
+    },
+    {
+      "action": "api::exchanger.exchanger.find"
+    },
+    {
+      "action": "api::exchanger.exchanger.findOne"
+    },
+    {
+      "action": "api::p2p.p2p.create"
+    },
+    {
+      "action": "api::p2p.p2p.delete"
+    },
+    {
+      "action": "api::p2p.p2p.find"
+    },
+    {
+      "action": "api::p2p.p2p.findOne"
+    },
+    {
+      "action": "api::p2p.p2p.update"
+    },
+    {
+      "action": "api::pm-group.pm-group.find"
+    },
+    {
+      "action": "api::pm-group.pm-group.findOne"
+    },
+    {
+      "action": "api::pm.pm.find"
+    },
+    {
+      "action": "api::pm.pm.findOne"
+    },
+    {
+      "action": "api::popular.popular.find"
+    },
+    {
+      "action": "api::popular.popular.findOne"
+    },
+    {
+      "action": "api::regulation-group.regulation-group.findOne"
+    },
+    {
+      "action": "api::selector.selector.find"
+    },
+    {
+      "action": "api::step.step.findOne"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.find"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.findOne"
+    },
+    {
+      "action": "plugin::email.email.send"
+    },
+    {
+      "action": "plugin::upload.content-api.find"
+    },
+    {
+      "action": "plugin::upload.content-api.findOne"
+    },
+    {
+      "action": "plugin::upload.content-api.upload"
+    }
+  ]
+}

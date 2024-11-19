@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_p2p_regulation_items",
+  "info": {
+    "displayName": "regulation item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en_title": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "en_description": {
+      "type": "text",
+      "maxLength": 340
+    },
+    "default_checked": {
+      "type": "boolean",
+      "default": false
+    },
+    "ru_title": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "ru_description": {
+      "type": "text",
+      "maxLength": 340
+    },
+    "has_article": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

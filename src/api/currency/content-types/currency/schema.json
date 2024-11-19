@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "currencies",
+  "info": {
+    "singularName": "currency",
+    "pluralName": "currencies",
+    "displayName": "currency",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 6,
+      "minLength": 2
+    },
+    "accuracy": {
+      "type": "integer",
+      "default": 2,
+      "required": false,
+      "min": 0,
+      "max": 6
+    }
+  }
+}

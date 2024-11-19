@@ -1,0 +1,96 @@
+{
+  "key": "plugin_content_manager_configuration_components::exchanger.physical-rate",
+  "value": {
+    "uid": "exchanger.physical-rate",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "currency": {
+        "edit": {
+          "label": "currency",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "code"
+        },
+        "list": {
+          "label": "currency",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "buying": {
+        "edit": {
+          "label": "buying",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "buying",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "selling": {
+        "edit": {
+          "label": "selling",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "selling",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "currency",
+        "buying",
+        "selling"
+      ],
+      "edit": [
+        [
+          {
+            "name": "currency",
+            "size": 4
+          },
+          {
+            "name": "buying",
+            "size": 4
+          },
+          {
+            "name": "selling",
+            "size": 4
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

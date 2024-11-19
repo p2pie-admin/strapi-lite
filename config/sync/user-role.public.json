@@ -1,0 +1,169 @@
+{
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "permissions": [
+    {
+      "action": "api::article.article.find"
+    },
+    {
+      "action": "api::article.article.findOne"
+    },
+    {
+      "action": "api::currency.currency.find"
+    },
+    {
+      "action": "api::currency.currency.findOne"
+    },
+    {
+      "action": "api::direction-parameter.direction-parameter.find"
+    },
+    {
+      "action": "api::direction-parameter.direction-parameter.findOne"
+    },
+    {
+      "action": "api::dirs-text.dirs-text.find"
+    },
+    {
+      "action": "api::dirs-text.dirs-text.findOne"
+    },
+    {
+      "action": "api::exchanger-parameter.exchanger-parameter.find"
+    },
+    {
+      "action": "api::exchanger-parameter.exchanger-parameter.findOne"
+    },
+    {
+      "action": "api::exchanger.exchanger.find"
+    },
+    {
+      "action": "api::exchanger.exchanger.findOne"
+    },
+    {
+      "action": "api::logo.logo.find"
+    },
+    {
+      "action": "api::main-text.main-text.find"
+    },
+    {
+      "action": "api::main-text.main-text.findOne"
+    },
+    {
+      "action": "api::order-intro.order-intro.find"
+    },
+    {
+      "action": "api::order-intro.order-intro.findOne"
+    },
+    {
+      "action": "api::p2p.p2p.create"
+    },
+    {
+      "action": "api::p2p.p2p.find"
+    },
+    {
+      "action": "api::p2p.p2p.findOne"
+    },
+    {
+      "action": "api::parameter.parameter.find"
+    },
+    {
+      "action": "api::parameter.parameter.findOne"
+    },
+    {
+      "action": "api::parser-setting.parser-setting.find"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.create"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.delete"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.find"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.findOne"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.update"
+    },
+    {
+      "action": "api::pm-group.pm-group.find"
+    },
+    {
+      "action": "api::pm-group.pm-group.findOne"
+    },
+    {
+      "action": "api::pm.pm.find"
+    },
+    {
+      "action": "api::pm.pm.findOne"
+    },
+    {
+      "action": "api::pms-text.pms-text.find"
+    },
+    {
+      "action": "api::pms-text.pms-text.findOne"
+    },
+    {
+      "action": "api::popular.popular.find"
+    },
+    {
+      "action": "api::popular.popular.findOne"
+    },
+    {
+      "action": "api::redirect.redirect.create"
+    },
+    {
+      "action": "api::regulation-group.regulation-group.find"
+    },
+    {
+      "action": "api::regulation-group.regulation-group.findOne"
+    },
+    {
+      "action": "api::selector.selector.find"
+    },
+    {
+      "action": "api::step.step.find"
+    },
+    {
+      "action": "api::step.step.findOne"
+    },
+    {
+      "action": "api::text-box.text-box.find"
+    },
+    {
+      "action": "api::text-box.text-box.findOne"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.find"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.findOne"
+    },
+    {
+      "action": "plugin::upload.content-api.destroy"
+    },
+    {
+      "action": "plugin::upload.content-api.find"
+    },
+    {
+      "action": "plugin::upload.content-api.findOne"
+    },
+    {
+      "action": "plugin::upload.content-api.upload"
+    },
+    {
+      "action": "plugin::users-permissions.auth.callback"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.register"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

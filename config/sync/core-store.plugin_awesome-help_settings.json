@@ -1,0 +1,9 @@
+{
+  "key": "plugin_awesome-help_settings",
+  "value": {
+    "enabled": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

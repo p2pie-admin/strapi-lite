@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exchangers",
+  "info": {
+    "singularName": "exchanger",
+    "pluralName": "exchangers",
+    "displayName": "exchanger",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 24,
+      "minLength": 2,
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 250
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "suspended",
+        "disabled"
+      ],
+      "default": "disabled",
+      "required": true
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "pro",
+        "new"
+      ]
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "exchanger.exchanger",
+      "private": true
+    },
+    "date_listed": {
+      "type": "string",
+      "regex": "^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$"
+    },
+    "rates_link": {
+      "type": "string",
+      "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
+      "required": true,
+      "unique": true
+    },
+    "ref_link": {
+      "type": "string",
+      "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
+      "unique": true
+    },
+    "admin_comment": {
+      "type": "text",
+      "private": true
+    },
+    "admin_rating": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0,
+      "max": 5
+    }
+  }
+}

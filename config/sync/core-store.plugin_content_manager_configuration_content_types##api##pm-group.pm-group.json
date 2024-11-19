@@ -1,0 +1,252 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::pm-group.pm-group",
+  "value": {
+    "uid": "api::pm-group.pm-group",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "en_name",
+      "defaultSortBy": "en_name",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_name": {
+        "edit": {
+          "label": "en_name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_name": {
+        "edit": {
+          "label": "ru_name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "prefix": {
+        "edit": {
+          "label": "prefix",
+          "description": "Например префикс sber + валюта rub дают платежку  sberrub ",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "prefix",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "icon": {
+        "edit": {
+          "label": "icon",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "icon",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "options": {
+        "edit": {
+          "label": "options",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "options",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "color": {
+        "edit": {
+          "label": "color",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "color",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "countries": {
+        "edit": {
+          "label": "countries",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "countries",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "rank": {
+        "edit": {
+          "label": "rank",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "rank",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "en_name",
+            "size": 4
+          },
+          {
+            "name": "ru_name",
+            "size": 4
+          },
+          {
+            "name": "prefix",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "options",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "icon",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "color",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "countries",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "rank",
+            "size": 4
+          }
+        ]
+      ],
+      "list": [
+        "en_name",
+        "prefix",
+        "icon",
+        "color"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

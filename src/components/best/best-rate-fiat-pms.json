@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_best_best_rate_fiat_pms",
+  "info": {
+    "displayName": "best rate fiat pms"
+  },
+  "options": {},
+  "attributes": {
+    "pms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pm.pm"
+    }
+  }
+}

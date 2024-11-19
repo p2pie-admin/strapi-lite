@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "selectors",
+  "info": {
+    "singularName": "selector",
+    "pluralName": "selectors",
+    "displayName": "selector"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "en_give_header": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "ru_give_header": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "en_get_header": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "ru_get_header": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "search_bar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "selector.search",
+      "required": true
+    },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "selector.section",
+      "min": 1,
+      "max": 10
+    }
+  }
+}

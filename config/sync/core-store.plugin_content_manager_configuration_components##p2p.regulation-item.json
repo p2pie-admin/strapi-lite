@@ -1,0 +1,153 @@
+{
+  "key": "plugin_content_manager_configuration_components::p2p.regulation-item",
+  "value": {
+    "uid": "p2p.regulation-item",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "en_title",
+      "defaultSortBy": "en_title",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "en_title": {
+        "edit": {
+          "label": "en_title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_description": {
+        "edit": {
+          "label": "en_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "default_checked": {
+        "edit": {
+          "label": "default_checked",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "default_checked",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_title": {
+        "edit": {
+          "label": "ru_title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_description": {
+        "edit": {
+          "label": "ru_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "has_article": {
+        "edit": {
+          "label": "has_article",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "has_article",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "default_checked",
+        "en_title",
+        "en_description"
+      ],
+      "edit": [
+        [
+          {
+            "name": "en_title",
+            "size": 4
+          },
+          {
+            "name": "ru_title",
+            "size": 4
+          },
+          {
+            "name": "default_checked",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "en_description",
+            "size": 6
+          },
+          {
+            "name": "ru_description",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "has_article",
+            "size": 4
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

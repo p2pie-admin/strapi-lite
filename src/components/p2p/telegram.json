@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_p2p_telegrams",
+  "info": {
+    "displayName": "telegram",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "maxLength": 50,
+      "required": false,
+      "minLength": 3,
+      "unique": false
+    },
+    "chat_id": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 50,
+      "required": true
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

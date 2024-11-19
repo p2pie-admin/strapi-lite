@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pms_texts",
+  "info": {
+    "singularName": "pms-text",
+    "pluralName": "pms-texts",
+    "displayName": "Pms Text",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "section": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "crypto",
+        "bank",
+        "cash",
+        "digital",
+        "transfer"
+      ],
+      "default": "crypto"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

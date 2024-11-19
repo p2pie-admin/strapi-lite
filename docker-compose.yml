@@ -1,0 +1,76 @@
+services:
+  strapi:
+    container_name: strapi
+    image: darkshrine/strapi:latest
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: /opt/app/data/data.db
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ./.env:/opt/app/.env
+      - ./data:/opt/app/data # Mount the SQLite database file
+      - config:/opt/app/config # Config Sync
+    ports:
+      - "1337:1337"
+    networks:
+      - my-network
+
+  converter:
+    container_name: converter
+    image: darkshrine/converter:latest
+    restart: always
+    env_file: .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      STRAPI: ${STRAPI}
+      EXCHANGERATESAPI_URL: ${EXCHANGERATESAPI_URL}
+    ports:
+      - "5001:5001"
+    networks:
+      - my-network
+    depends_on:
+      - strapi
+
+  npm:
+    container_name: npm
+    image: "jc21/nginx-proxy-manager:latest"
+    restart: unless-stopped
+    ports:
+      - "80:80" # HTTP
+      - "81:81" # admin@example.com changeme
+      - "443:443" # HTTPS
+    volumes:
+      - npm-data:/data
+      - npm-letsencrypt:/etc/letsencrypt
+    networks:
+      - my-network
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - nginx-html:/usr/share/nginx/html
+    depends_on:
+      - npm
+    networks:
+      - my-network
+
+volumes:
+  config:
+  public:
+  npm-data:
+  npm-letsencrypt:
+  nginx-html:
+
+networks:
+  my-network:
+    name: my-network
+    driver: bridge

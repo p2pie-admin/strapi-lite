@@ -1,0 +1,267 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::step.step",
+  "value": {
+    "uid": "api::step.step",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "en_title",
+      "defaultSortBy": "rank",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_title": {
+        "edit": {
+          "label": "en_title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_title": {
+        "edit": {
+          "label": "ru_title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_description": {
+        "edit": {
+          "label": "en_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_description": {
+        "edit": {
+          "label": "ru_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_stepper_title": {
+        "edit": {
+          "label": "en_stepper_title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_stepper_title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_stepper_title": {
+        "edit": {
+          "label": "ru_stepper_title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_stepper_title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_stepper_description": {
+        "edit": {
+          "label": "en_stepper_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_stepper_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_stepper_description": {
+        "edit": {
+          "label": "ru_stepper_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_stepper_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "rank": {
+        "edit": {
+          "label": "rank",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "rank",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "en_title",
+            "size": 6
+          },
+          {
+            "name": "ru_title",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_description",
+            "size": 6
+          },
+          {
+            "name": "ru_description",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_stepper_title",
+            "size": 6
+          },
+          {
+            "name": "ru_stepper_title",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_stepper_description",
+            "size": 6
+          },
+          {
+            "name": "ru_stepper_description",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "rank",
+            "size": 4
+          }
+        ]
+      ],
+      "list": [
+        "en_title",
+        "ru_title",
+        "en_description"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

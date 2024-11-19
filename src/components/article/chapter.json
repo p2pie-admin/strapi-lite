@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_article_chapters",
+  "info": {
+    "displayName": "Chapter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    },
+    "disclaimer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article.disclaimer"
+    }
+  }
+}

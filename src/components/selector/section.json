@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_selector_sections",
+  "info": {
+    "displayName": "section",
+    "icon": "folder-open",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rows": {
+      "type": "integer",
+      "max": 5,
+      "min": 1,
+      "default": 3
+    },
+    "columns": {
+      "type": "integer",
+      "default": 3,
+      "max": 4,
+      "min": 2
+    },
+    "ru_title": {
+      "type": "string"
+    },
+    "en_title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "pm_groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pm-group.pm-group"
+    }
+  }
+}

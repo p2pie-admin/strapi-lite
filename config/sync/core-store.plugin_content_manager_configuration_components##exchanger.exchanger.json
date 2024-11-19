@@ -1,0 +1,115 @@
+{
+  "key": "plugin_content_manager_configuration_components::exchanger.exchanger",
+  "value": {
+    "uid": "exchanger.exchanger",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "telegram",
+      "defaultSortBy": "telegram",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "telegram": {
+        "edit": {
+          "label": "telegram",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "telegram",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "email": {
+        "edit": {
+          "label": "email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "phone_number": {
+        "edit": {
+          "label": "phone_number",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "phone_number",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "whatsapp": {
+        "edit": {
+          "label": "whatsapp",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "whatsapp",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "telegram",
+        "email",
+        "phone_number"
+      ],
+      "edit": [
+        [
+          {
+            "name": "telegram",
+            "size": 6
+          },
+          {
+            "name": "email",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "phone_number",
+            "size": 6
+          },
+          {
+            "name": "whatsapp",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

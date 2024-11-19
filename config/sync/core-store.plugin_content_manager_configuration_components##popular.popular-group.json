@@ -1,0 +1,118 @@
+{
+  "key": "plugin_content_manager_configuration_components::popular.popular-group",
+  "value": {
+    "uid": "popular.popular-group",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "en_name",
+      "defaultSortBy": "en_name",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "icon": {
+        "edit": {
+          "label": "icon",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "icon",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "en_name": {
+        "edit": {
+          "label": "en_name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_name": {
+        "edit": {
+          "label": "ru_name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pms": {
+        "edit": {
+          "label": "pms",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "code"
+        },
+        "list": {
+          "label": "pms",
+          "searchable": false,
+          "sortable": false
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "icon",
+        "en_name",
+        "pms"
+      ],
+      "edit": [
+        [
+          {
+            "name": "icon",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_name",
+            "size": 6
+          },
+          {
+            "name": "ru_name",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pms",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

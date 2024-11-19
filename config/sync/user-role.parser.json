@@ -1,0 +1,112 @@
+{
+  "name": "parser",
+  "description": "rates parser",
+  "type": "parser",
+  "permissions": [
+    {
+      "action": "api::currency.currency.find"
+    },
+    {
+      "action": "api::currency.currency.findOne"
+    },
+    {
+      "action": "api::exchanger-parameter.exchanger-parameter.find"
+    },
+    {
+      "action": "api::exchanger-parameter.exchanger-parameter.findOne"
+    },
+    {
+      "action": "api::exchanger.exchanger.create"
+    },
+    {
+      "action": "api::exchanger.exchanger.delete"
+    },
+    {
+      "action": "api::exchanger.exchanger.find"
+    },
+    {
+      "action": "api::exchanger.exchanger.findOne"
+    },
+    {
+      "action": "api::exchanger.exchanger.update"
+    },
+    {
+      "action": "api::p2p.p2p.find"
+    },
+    {
+      "action": "api::p2p.p2p.findOne"
+    },
+    {
+      "action": "api::parser-setting.parser-setting.find"
+    },
+    {
+      "action": "api::parser-setting.parser-setting.update"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.create"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.find"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.findOne"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.update"
+    },
+    {
+      "action": "api::pm-group.pm-group.find"
+    },
+    {
+      "action": "api::pm-group.pm-group.findOne"
+    },
+    {
+      "action": "api::pm.pm.find"
+    },
+    {
+      "action": "api::pm.pm.findOne"
+    },
+    {
+      "action": "api::popular.popular.create"
+    },
+    {
+      "action": "api::popular.popular.find"
+    },
+    {
+      "action": "api::popular.popular.findOne"
+    },
+    {
+      "action": "api::popular.popular.update"
+    },
+    {
+      "action": "api::regulation-group.regulation-group.find"
+    },
+    {
+      "action": "api::regulation-group.regulation-group.findOne"
+    },
+    {
+      "action": "api::selector.selector.find"
+    },
+    {
+      "action": "api::selector.selector.update"
+    },
+    {
+      "action": "api::step.step.find"
+    },
+    {
+      "action": "api::step.step.findOne"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.create"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.find"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.findOne"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.update"
+    }
+  ]
+}

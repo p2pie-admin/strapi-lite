@@ -1,0 +1,210 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::order-intro.order-intro",
+  "value": {
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "en_header",
+      "defaultSortBy": "en_header",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_header": {
+        "edit": {
+          "label": "en_header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_header": {
+        "edit": {
+          "label": "ru_header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_description": {
+        "edit": {
+          "label": "en_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_description": {
+        "edit": {
+          "label": "ru_description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "image": {
+        "edit": {
+          "label": "image",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "image",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "rank": {
+        "edit": {
+          "label": "rank",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "rank",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "en_header",
+        "ru_header",
+        "en_description"
+      ],
+      "edit": [
+        [
+          {
+            "name": "en_header",
+            "size": 6
+          },
+          {
+            "name": "ru_header",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_description",
+            "size": 6
+          },
+          {
+            "name": "ru_description",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "image",
+            "size": 6
+          },
+          {
+            "name": "rank",
+            "size": 4
+          }
+        ]
+      ]
+    },
+    "uid": "api::order-intro.order-intro"
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

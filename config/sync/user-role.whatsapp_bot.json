@@ -1,0 +1,28 @@
+{
+  "name": "whatsapp_admin",
+  "description": "can create update physical exchangers",
+  "type": "whatsapp_bot",
+  "permissions": [
+    {
+      "action": "api::physical-exchanger.physical-exchanger.create"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.find"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.update"
+    },
+    {
+      "action": "plugin::upload.content-api.destroy"
+    },
+    {
+      "action": "plugin::upload.content-api.find"
+    },
+    {
+      "action": "plugin::upload.content-api.findOne"
+    },
+    {
+      "action": "plugin::upload.content-api.upload"
+    }
+  ]
+}

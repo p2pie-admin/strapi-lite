@@ -1,0 +1,1864 @@
+{
+  "name": "Super Admin",
+  "code": "strapi-super-admin",
+  "description": "Super Admins can access and manage all features and settings.",
+  "permissions": [
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "header",
+          "subheader",
+          "code",
+          "about",
+          "section",
+          "chapters"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::article.article",
+      "properties": {
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "header",
+          "subheader",
+          "code",
+          "about",
+          "section",
+          "chapters"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::article.article",
+      "properties": {
+        "fields": [
+          "header",
+          "subheader",
+          "code",
+          "about",
+          "section",
+          "chapters"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::currency.currency",
+      "properties": {
+        "fields": [
+          "code",
+          "accuracy"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::currency.currency",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::currency.currency",
+      "properties": {
+        "fields": [
+          "code",
+          "accuracy"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::currency.currency",
+      "properties": {
+        "fields": [
+          "code",
+          "accuracy"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::direction-parameter.direction-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::direction-parameter.direction-parameter",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::direction-parameter.direction-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::direction-parameter.direction-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::dirs-text.dirs-text",
+      "properties": {
+        "fields": [
+          "text",
+          "section_give",
+          "section_get",
+          "title"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::dirs-text.dirs-text",
+      "properties": {
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::dirs-text.dirs-text",
+      "properties": {
+        "fields": [
+          "text",
+          "section_give",
+          "section_get",
+          "title"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::dirs-text.dirs-text",
+      "properties": {
+        "fields": [
+          "text",
+          "section_give",
+          "section_get",
+          "title"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::exchanger-parameter.exchanger-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::exchanger-parameter.exchanger-parameter",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::exchanger-parameter.exchanger-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::exchanger-parameter.exchanger-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::exchanger.exchanger",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "logo",
+          "status",
+          "tag",
+          "contacts.telegram",
+          "contacts.email",
+          "contacts.phone_number",
+          "contacts.whatsapp",
+          "date_listed",
+          "rates_link",
+          "ref_link",
+          "admin_comment",
+          "admin_rating"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::exchanger.exchanger",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::exchanger.exchanger",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "logo",
+          "status",
+          "tag",
+          "contacts.telegram",
+          "contacts.email",
+          "contacts.phone_number",
+          "contacts.whatsapp",
+          "date_listed",
+          "rates_link",
+          "ref_link",
+          "admin_comment",
+          "admin_rating"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::exchanger.exchanger",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "logo",
+          "status",
+          "tag",
+          "contacts.telegram",
+          "contacts.email",
+          "contacts.phone_number",
+          "contacts.whatsapp",
+          "date_listed",
+          "rates_link",
+          "ref_link",
+          "admin_comment",
+          "admin_rating"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::logo.logo",
+      "properties": {
+        "fields": [
+          "logo"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::logo.logo",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::logo.logo",
+      "properties": {
+        "fields": [
+          "logo"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::logo.logo",
+      "properties": {
+        "fields": [
+          "logo"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::main-text.main-text",
+      "properties": {
+        "fields": [
+          "title",
+          "description",
+          "image",
+          "rank",
+          "link.text",
+          "link.href",
+          "link.isExternal",
+          "link.isBlank"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::main-text.main-text",
+      "properties": {
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::main-text.main-text",
+      "properties": {
+        "fields": [
+          "title",
+          "description",
+          "image",
+          "rank",
+          "link.text",
+          "link.href",
+          "link.isExternal",
+          "link.isBlank"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::main-text.main-text",
+      "properties": {
+        "fields": [
+          "title",
+          "description",
+          "image",
+          "rank",
+          "link.text",
+          "link.href",
+          "link.isExternal",
+          "link.isBlank"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::order-intro.order-intro",
+      "properties": {
+        "fields": [
+          "en_header",
+          "ru_header",
+          "en_description",
+          "ru_description",
+          "image",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::order-intro.order-intro",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::order-intro.order-intro",
+      "properties": {
+        "fields": [
+          "en_header",
+          "ru_header",
+          "en_description",
+          "ru_description",
+          "image",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::order-intro.order-intro",
+      "properties": {
+        "fields": [
+          "en_header",
+          "ru_header",
+          "en_description",
+          "ru_description",
+          "image",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::p2p.p2p",
+      "properties": {
+        "fields": [
+          "name",
+          "info",
+          "status",
+          "dirs",
+          "regulationCodes",
+          "locations",
+          "uid",
+          "admin_comment",
+          "telegram.username",
+          "telegram.chat_id",
+          "telegram.isNew"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::p2p.p2p",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::p2p.p2p",
+      "properties": {
+        "fields": [
+          "name",
+          "info",
+          "status",
+          "dirs",
+          "regulationCodes",
+          "locations",
+          "uid",
+          "admin_comment",
+          "telegram.username",
+          "telegram.chat_id",
+          "telegram.isNew"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::p2p.p2p",
+      "properties": {
+        "fields": [
+          "name",
+          "info",
+          "status",
+          "dirs",
+          "regulationCodes",
+          "locations",
+          "uid",
+          "admin_comment",
+          "telegram.username",
+          "telegram.chat_id",
+          "telegram.isNew"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::parameter.parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "icon",
+          "title",
+          "description",
+          "color"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::parameter.parameter",
+      "properties": {
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::parameter.parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "icon",
+          "title",
+          "description",
+          "color"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::parameter.parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "icon",
+          "title",
+          "description",
+          "color"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::parser-setting.parser-setting",
+      "properties": {
+        "fields": [
+          "dirs_disabled",
+          "cities",
+          "SD_applied_from",
+          "SD_best",
+          "SD_worst",
+          "pause_between_loops"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::parser-setting.parser-setting",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::parser-setting.parser-setting",
+      "properties": {
+        "fields": [
+          "dirs_disabled",
+          "cities",
+          "SD_applied_from",
+          "SD_best",
+          "SD_worst",
+          "pause_between_loops"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::parser-setting.parser-setting",
+      "properties": {
+        "fields": [
+          "dirs_disabled",
+          "cities",
+          "SD_applied_from",
+          "SD_best",
+          "SD_worst",
+          "pause_between_loops"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::physical-exchanger.physical-exchanger",
+      "properties": {
+        "fields": [
+          "name",
+          "lng",
+          "lat",
+          "contact",
+          "opened",
+          "photo",
+          "days_off",
+          "physical_rates.currency",
+          "physical_rates.buying",
+          "physical_rates.selling",
+          "ref"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::physical-exchanger.physical-exchanger",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::physical-exchanger.physical-exchanger",
+      "properties": {
+        "fields": [
+          "name",
+          "lng",
+          "lat",
+          "contact",
+          "opened",
+          "photo",
+          "days_off",
+          "physical_rates.currency",
+          "physical_rates.buying",
+          "physical_rates.selling",
+          "ref"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::physical-exchanger.physical-exchanger",
+      "properties": {
+        "fields": [
+          "name",
+          "lng",
+          "lat",
+          "contact",
+          "opened",
+          "photo",
+          "days_off",
+          "physical_rates.currency",
+          "physical_rates.buying",
+          "physical_rates.selling",
+          "ref"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pm-group.pm-group",
+      "properties": {
+        "fields": [
+          "en_name",
+          "ru_name",
+          "prefix",
+          "icon",
+          "options",
+          "color",
+          "countries",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pm-group.pm-group",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pm-group.pm-group",
+      "properties": {
+        "fields": [
+          "en_name",
+          "ru_name",
+          "prefix",
+          "icon",
+          "options",
+          "color",
+          "countries",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pm-group.pm-group",
+      "properties": {
+        "fields": [
+          "en_name",
+          "ru_name",
+          "prefix",
+          "icon",
+          "options",
+          "color",
+          "countries",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pm.pm",
+      "properties": {
+        "fields": [
+          "code",
+          "pm_group",
+          "rank",
+          "popular_as"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pm.pm",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pm.pm",
+      "properties": {
+        "fields": [
+          "code",
+          "pm_group",
+          "rank",
+          "popular_as"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pm.pm",
+      "properties": {
+        "fields": [
+          "code",
+          "pm_group",
+          "rank",
+          "popular_as"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pms-text.pms-text",
+      "properties": {
+        "fields": [
+          "description",
+          "section",
+          "articles"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pms-text.pms-text",
+      "properties": {
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pms-text.pms-text",
+      "properties": {
+        "fields": [
+          "description",
+          "section",
+          "articles"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pms-text.pms-text",
+      "properties": {
+        "fields": [
+          "description",
+          "section",
+          "articles"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::popular.popular",
+      "properties": {
+        "fields": [
+          "code",
+          "pm_group"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::popular.popular",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::popular.popular",
+      "properties": {
+        "fields": [
+          "code",
+          "pm_group"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::popular.popular",
+      "properties": {
+        "fields": [
+          "code",
+          "pm_group"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::redirect.redirect",
+      "properties": {
+        "fields": [
+          "direction",
+          "id_related_to",
+          "give",
+          "get",
+          "isP2P",
+          "ip"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::redirect.redirect",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::redirect.redirect",
+      "properties": {
+        "fields": [
+          "direction",
+          "id_related_to",
+          "give",
+          "get",
+          "isP2P",
+          "ip"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::redirect.redirect",
+      "properties": {
+        "fields": [
+          "direction",
+          "id_related_to",
+          "give",
+          "get",
+          "isP2P",
+          "ip"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::regulation-group.regulation-group",
+      "properties": {
+        "fields": [
+          "en_title",
+          "regulations",
+          "ru_title",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::regulation-group.regulation-group",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::regulation-group.regulation-group",
+      "properties": {
+        "fields": [
+          "en_title",
+          "regulations",
+          "ru_title",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::regulation-group.regulation-group",
+      "properties": {
+        "fields": [
+          "en_title",
+          "regulations",
+          "ru_title",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::selector.selector",
+      "properties": {
+        "fields": [
+          "en_give_header",
+          "ru_give_header",
+          "en_get_header",
+          "ru_get_header",
+          "search_bar.ru_placeholder",
+          "search_bar.en_placeholder",
+          "search_bar.ru_give_adornment",
+          "search_bar.ru_get_adornment",
+          "search_bar.en_give_adornment",
+          "search_bar.en_get_adornment",
+          "sections.rows",
+          "sections.columns",
+          "sections.ru_title",
+          "sections.en_title",
+          "sections.pm_groups"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::selector.selector",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::selector.selector",
+      "properties": {
+        "fields": [
+          "en_give_header",
+          "ru_give_header",
+          "en_get_header",
+          "ru_get_header",
+          "search_bar.ru_placeholder",
+          "search_bar.en_placeholder",
+          "search_bar.ru_give_adornment",
+          "search_bar.ru_get_adornment",
+          "search_bar.en_give_adornment",
+          "search_bar.en_get_adornment",
+          "sections.rows",
+          "sections.columns",
+          "sections.ru_title",
+          "sections.en_title",
+          "sections.pm_groups"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::selector.selector",
+      "properties": {
+        "fields": [
+          "en_give_header",
+          "ru_give_header",
+          "en_get_header",
+          "ru_get_header",
+          "search_bar.ru_placeholder",
+          "search_bar.en_placeholder",
+          "search_bar.ru_give_adornment",
+          "search_bar.ru_get_adornment",
+          "search_bar.en_give_adornment",
+          "search_bar.en_get_adornment",
+          "sections.rows",
+          "sections.columns",
+          "sections.ru_title",
+          "sections.en_title",
+          "sections.pm_groups"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::step.step",
+      "properties": {
+        "fields": [
+          "en_title",
+          "ru_title",
+          "en_description",
+          "ru_description",
+          "en_stepper_title",
+          "ru_stepper_title",
+          "en_stepper_description",
+          "ru_stepper_description",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::step.step",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::step.step",
+      "properties": {
+        "fields": [
+          "en_title",
+          "ru_title",
+          "en_description",
+          "ru_description",
+          "en_stepper_title",
+          "ru_stepper_title",
+          "en_stepper_description",
+          "ru_stepper_description",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::step.step",
+      "properties": {
+        "fields": [
+          "en_title",
+          "ru_title",
+          "en_description",
+          "ru_description",
+          "en_stepper_title",
+          "ru_stepper_title",
+          "en_stepper_description",
+          "ru_stepper_description",
+          "rank"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::text-box.text-box",
+      "properties": {
+        "fields": [
+          "title",
+          "subtitle",
+          "text",
+          "key"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::text-box.text-box",
+      "properties": {
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::text-box.text-box",
+      "properties": {
+        "fields": [
+          "title",
+          "subtitle",
+          "text",
+          "key"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::text-box.text-box",
+      "properties": {
+        "fields": [
+          "title",
+          "subtitle",
+          "text",
+          "key"
+        ],
+        "locales": [
+          "en",
+          "ru"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::top-parameter.top-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::top-parameter.top-parameter",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::top-parameter.top-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::top-parameter.top-parameter",
+      "properties": {
+        "fields": [
+          "code",
+          "parameter.en_description",
+          "parameter.ru_description",
+          "parameter.icon",
+          "en_name",
+          "ru_name"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::api-tokens.access",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::api-tokens.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::api-tokens.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::api-tokens.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::api-tokens.regenerate",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::api-tokens.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::marketplace.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::project-settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::project-settings.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::roles.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::roles.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::roles.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::roles.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::transfer.tokens.access",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::transfer.tokens.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::transfer.tokens.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::transfer.tokens.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::transfer.tokens.regenerate",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::transfer.tokens.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::users.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::users.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::users.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::users.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::webhooks.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::webhooks.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::webhooks.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "admin::webhooks.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::config-sync.menu-link",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::config-sync.settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.collection-types.configure-view",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.components.configure-layout",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "plugin::users-permissions.user",
+      "properties": {
+        "fields": [
+          "username",
+          "email",
+          "provider",
+          "password",
+          "resetPasswordToken",
+          "confirmationToken",
+          "confirmed",
+          "blocked",
+          "role"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "plugin::users-permissions.user",
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "plugin::users-permissions.user",
+      "properties": {
+        "fields": [
+          "username",
+          "email",
+          "provider",
+          "password",
+          "resetPasswordToken",
+          "confirmationToken",
+          "confirmed",
+          "blocked",
+          "role"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "plugin::users-permissions.user",
+      "properties": {
+        "fields": [
+          "username",
+          "email",
+          "provider",
+          "password",
+          "resetPasswordToken",
+          "confirmationToken",
+          "confirmed",
+          "blocked",
+          "role"
+        ]
+      },
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-manager.single-types.configure-view",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::content-type-builder.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::email.settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::i18n.locale.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::i18n.locale.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::i18n.locale.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::i18n.locale.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::import-export-entries.export",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::import-export-entries.import",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.assets.copy-link",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.assets.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.assets.download",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.assets.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.configure-view",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::upload.settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.advanced-settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.advanced-settings.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.email-templates.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.email-templates.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.providers.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.providers.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.roles.create",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.roles.delete",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.roles.read",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    },
+    {
+      "action": "plugin::users-permissions.roles.update",
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "actionParameters": {}
+    }
+  ]
+}

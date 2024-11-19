@@ -1,0 +1,34 @@
+{
+  "name": "currency-converter",
+  "description": "can update accuracies",
+  "type": "coingecko",
+  "permissions": [
+    {
+      "action": "api::currency.currency.find"
+    },
+    {
+      "action": "api::currency.currency.findOne"
+    },
+    {
+      "action": "api::currency.currency.update"
+    },
+    {
+      "action": "api::parser-setting.parser-setting.find"
+    },
+    {
+      "action": "api::pm-group.pm-group.find"
+    },
+    {
+      "action": "api::pm-group.pm-group.findOne"
+    },
+    {
+      "action": "api::pm.pm.find"
+    },
+    {
+      "action": "api::pm.pm.findOne"
+    },
+    {
+      "action": "api::selector.selector.find"
+    }
+  ]
+}

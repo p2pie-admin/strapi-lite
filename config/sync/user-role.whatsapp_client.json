@@ -1,0 +1,13 @@
+{
+  "name": "whatsapp_client",
+  "description": "can only update physical exchanger",
+  "type": "whatsapp_client",
+  "permissions": [
+    {
+      "action": "api::physical-exchanger.physical-exchanger.find"
+    },
+    {
+      "action": "api::physical-exchanger.physical-exchanger.findOne"
+    }
+  ]
+}

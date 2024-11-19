@@ -1,0 +1,212 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::article.article",
+  "value": {
+    "uid": "api::article.article",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 100,
+      "mainField": "code",
+      "defaultSortBy": "code",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "header": {
+        "edit": {
+          "label": "header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "subheader": {
+        "edit": {
+          "label": "subheader",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "subheader",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "code": {
+        "edit": {
+          "label": "code",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "code",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "about": {
+        "edit": {
+          "label": "about",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "about",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "section": {
+        "edit": {
+          "label": "section",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "section",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "chapters": {
+        "edit": {
+          "label": "chapters",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "chapters",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "code",
+            "size": 4
+          },
+          {
+            "name": "about",
+            "size": 8
+          }
+        ],
+        [
+          {
+            "name": "header",
+            "size": 6
+          },
+          {
+            "name": "subheader",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "section",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "chapters",
+            "size": 12
+          }
+        ]
+      ],
+      "list": [
+        "code",
+        "createdAt",
+        "header",
+        "subheader"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

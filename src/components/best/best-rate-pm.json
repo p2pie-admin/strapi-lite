@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_best_best_rate_pms",
+  "info": {
+    "displayName": "best rate crypto pms",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pm.pm"
+    }
+  }
+}

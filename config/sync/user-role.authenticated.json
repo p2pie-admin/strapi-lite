@@ -1,0 +1,34 @@
+{
+  "name": "Authenticated",
+  "description": "Default role given to authenticated user.",
+  "type": "authenticated",
+  "permissions": [
+    {
+      "action": "api::exchanger.exchanger.create"
+    },
+    {
+      "action": "api::exchanger.exchanger.delete"
+    },
+    {
+      "action": "api::exchanger.exchanger.find"
+    },
+    {
+      "action": "api::exchanger.exchanger.findOne"
+    },
+    {
+      "action": "api::exchanger.exchanger.update"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.find"
+    },
+    {
+      "action": "api::top-parameter.top-parameter.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

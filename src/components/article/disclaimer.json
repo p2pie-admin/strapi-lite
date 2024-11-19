@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_article_disclaimers",
+  "info": {
+    "displayName": "Disclaimer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 240
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "red",
+        "yellow"
+      ],
+      "default": "yellow",
+      "required": true
+    }
+  }
+}

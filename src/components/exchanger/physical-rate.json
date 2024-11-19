@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exchanger_physical_rates",
+  "info": {
+    "displayName": "Physical Rate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "currency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::currency.currency"
+    },
+    "buying": {
+      "type": "decimal",
+      "required": false
+    },
+    "selling": {
+      "type": "decimal",
+      "required": false
+    }
+  }
+}

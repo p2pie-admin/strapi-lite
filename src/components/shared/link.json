@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "maxLength": 25,
+      "required": false
+    },
+    "href": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "isBlank": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

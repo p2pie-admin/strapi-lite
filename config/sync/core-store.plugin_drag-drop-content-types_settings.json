@@ -1,0 +1,12 @@
+{
+  "key": "plugin_drag-drop-content-types_settings",
+  "value": {
+    "body": {
+      "rank": "rank",
+      "title": ""
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_exchanger_parameters",
+  "info": {
+    "displayName": "parameter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en_description": {
+      "type": "string",
+      "maxLength": 90
+    },
+    "ru_description": {
+      "type": "string",
+      "maxLength": 90
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

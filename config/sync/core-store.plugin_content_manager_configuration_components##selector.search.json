@@ -1,0 +1,153 @@
+{
+  "key": "plugin_content_manager_configuration_components::selector.search",
+  "value": {
+    "uid": "selector.search",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "ru_placeholder",
+      "defaultSortBy": "ru_placeholder",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "ru_placeholder": {
+        "edit": {
+          "label": "ru_placeholder",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_placeholder",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_placeholder": {
+        "edit": {
+          "label": "en_placeholder",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_placeholder",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_give_adornment": {
+        "edit": {
+          "label": "ru_give_adornment",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_give_adornment",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_get_adornment": {
+        "edit": {
+          "label": "ru_get_adornment",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_get_adornment",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_give_adornment": {
+        "edit": {
+          "label": "en_give_adornment",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_give_adornment",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_get_adornment": {
+        "edit": {
+          "label": "en_get_adornment",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_get_adornment",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "ru_placeholder",
+        "en_placeholder",
+        "ru_give_adornment"
+      ],
+      "edit": [
+        [
+          {
+            "name": "ru_placeholder",
+            "size": 6
+          },
+          {
+            "name": "en_placeholder",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "ru_give_adornment",
+            "size": 6
+          },
+          {
+            "name": "ru_get_adornment",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_give_adornment",
+            "size": 6
+          },
+          {
+            "name": "en_get_adornment",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

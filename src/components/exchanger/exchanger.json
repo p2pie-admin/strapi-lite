@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_exchanger_exchangers",
+  "info": {
+    "displayName": "exchanger contacts",
+    "icon": "file-medical-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "telegram": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone_number": {
+      "type": "string",
+      "regex": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$"
+    },
+    "whatsapp": {
+      "type": "string"
+    }
+  }
+}

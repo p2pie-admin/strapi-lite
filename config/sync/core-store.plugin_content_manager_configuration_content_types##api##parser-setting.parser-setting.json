@@ -1,0 +1,212 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::parser-setting.parser-setting",
+  "value": {
+    "uid": "api::parser-setting.parser-setting",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "dirs_disabled": {
+        "edit": {
+          "label": "dirs_disabled",
+          "description": "один dir на каждую строку",
+          "placeholder": "BTC_USDTERC20",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "dirs_disabled",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "cities": {
+        "edit": {
+          "label": "cities",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "cities",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "SD_applied_from": {
+        "edit": {
+          "label": "SD_applied_from",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SD_applied_from",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SD_best": {
+        "edit": {
+          "label": "SD_best",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SD_best",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "SD_worst": {
+        "edit": {
+          "label": "SD_worst",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SD_worst",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pause_between_loops": {
+        "edit": {
+          "label": "pause_between_loops",
+          "description": "(сек) Оставить 0 при перезапуске по завершению. Это поле нужно для полуспящего режима парсера с минимумом расхода ресурсов .",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pause_between_loops",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "dirs_disabled",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "cities",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "SD_applied_from",
+            "size": 4
+          },
+          {
+            "name": "SD_best",
+            "size": 4
+          },
+          {
+            "name": "SD_worst",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "pause_between_loops",
+            "size": 4
+          }
+        ]
+      ],
+      "list": [
+        "id",
+        "dirs_disabled",
+        "pause_between_loops",
+        "createdBy"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

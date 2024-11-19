@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pms",
+  "info": {
+    "singularName": "pm",
+    "pluralName": "pms",
+    "displayName": "pm",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "maxLength": 10,
+      "unique": true
+    },
+    "pm_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pm-group.pm-group"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "popular_as": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "crypto",
+        "fiat"
+      ]
+    }
+  }
+}

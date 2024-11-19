@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_selector_subgroups",
+  "info": {
+    "displayName": "subgroup",
+    "icon": "sitemap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 24
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "maxLength": 12,
+      "unique": false
+    },
+    "currency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::currency.currency"
+    },
+    "alternative_codes": {
+      "type": "string"
+    }
+  }
+}

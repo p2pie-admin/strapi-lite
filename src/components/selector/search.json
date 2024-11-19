@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_selector_searches",
+  "info": {
+    "displayName": "search",
+    "icon": "search-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "ru_placeholder": {
+      "type": "string"
+    },
+    "en_placeholder": {
+      "type": "string"
+    },
+    "ru_give_adornment": {
+      "type": "string"
+    },
+    "ru_get_adornment": {
+      "type": "string"
+    },
+    "en_give_adornment": {
+      "type": "string"
+    },
+    "en_get_adornment": {
+      "type": "string"
+    }
+  }
+}

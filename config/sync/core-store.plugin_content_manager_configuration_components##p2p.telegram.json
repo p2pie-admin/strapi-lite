@@ -1,0 +1,97 @@
+{
+  "key": "plugin_content_manager_configuration_components::p2p.telegram",
+  "value": {
+    "uid": "p2p.telegram",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "username",
+      "defaultSortBy": "username",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "username": {
+        "edit": {
+          "label": "username",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "username",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "chat_id": {
+        "edit": {
+          "label": "chat_id",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "chat_id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "isNew": {
+        "edit": {
+          "label": "isNew",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "isNew",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "chat_id",
+        "isNew",
+        "username"
+      ],
+      "edit": [
+        [
+          {
+            "name": "chat_id",
+            "size": 6
+          },
+          {
+            "name": "isNew",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "username",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

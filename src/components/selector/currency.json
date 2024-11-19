@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_selector_currencies",
+  "info": {
+    "displayName": "Currency",
+    "icon": "dollar-sign"
+  },
+  "options": {},
+  "attributes": {
+    "currency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::currency.currency"
+    }
+  }
+}

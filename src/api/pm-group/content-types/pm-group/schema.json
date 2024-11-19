@@ -1,0 +1,132 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pm_groups",
+  "info": {
+    "singularName": "pm-group",
+    "pluralName": "pm-groups",
+    "displayName": "Pm Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "en_name": {
+      "type": "string",
+      "maxLength": 30,
+      "unique": false,
+      "required": true
+    },
+    "ru_name": {
+      "type": "string",
+      "unique": false,
+      "maxLength": 30
+    },
+    "prefix": {
+      "type": "string",
+      "unique": true,
+      "required": false,
+      "maxLength": 8
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "options": {
+      "type": "dynamiczone",
+      "components": [
+        "selector.currency",
+        "selector.subgroup"
+      ],
+      "min": 1,
+      "required": true
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "    gray",
+        "    red",
+        "    orange",
+        "    yellow",
+        "    green",
+        "    teal",
+        "    blue",
+        "    cyan",
+        "    purple",
+        "    pink",
+        "    dark_gray",
+        "    dark_red",
+        "    dark_orange",
+        "    dark_yellow",
+        "    dark_green",
+        "    dark_teal",
+        "    dark_blue",
+        "    dark_cyan",
+        "    dark_purple",
+        "    dark_pink"
+      ],
+      "default": "    gray",
+      "required": true
+    },
+    "countries": {
+      "type": "customField",
+      "options": [
+        "ANY",
+        "ALBANIA",
+        "ARMENIA",
+        "AUSTRIA",
+        "AZERBAIJAN",
+        "BAHRAIN",
+        "BELARUS",
+        "BELGIUM",
+        "CHINA",
+        "CYPRUS",
+        "CZECH REPUBLIC",
+        "DENMARK",
+        "DOMINICAN REPUBLIC",
+        "ECUADOR",
+        "ESTONIA",
+        "FRANCE",
+        "GEORGIA",
+        "GERMANY",
+        "GREECE",
+        "HUNGARY",
+        "IRAN",
+        "ITALY",
+        "KAZAKHSTAN",
+        "KYRGYZSTAN",
+        "LATVIA",
+        "LIBYA",
+        "LITHUANIA",
+        "MEXICO",
+        "MOLDOVA",
+        "MONACO",
+        "MONTENEGRO",
+        "NETHERLANDS",
+        "NORWAY",
+        "POLAND",
+        "RUSSIA",
+        "SLOVAKIA",
+        "SPAIN",
+        "SWEDEN",
+        "TUNISIA",
+        "TURKEY",
+        "UK",
+        "UKRAINE",
+        "UNITED ARAB EMIRATES",
+        "USA",
+        "UZBEKISTAN"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "rank": {
+      "type": "integer",
+      "private": true
+    }
+  }
+}

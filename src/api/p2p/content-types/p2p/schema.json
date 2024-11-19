@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2ps",
+  "info": {
+    "singularName": "p2p",
+    "pluralName": "p2ps",
+    "displayName": "P2P",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false,
+      "maxLength": 22,
+      "minLength": 2,
+      "unique": true
+    },
+    "info": {
+      "type": "text",
+      "maxLength": 240
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "suspended",
+        "disabled"
+      ]
+    },
+    "dirs": {
+      "type": "json"
+    },
+    "regulationCodes": {
+      "type": "json"
+    },
+    "locations": {
+      "type": "json"
+    },
+    "uid": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 22,
+      "minLength": 3
+    },
+    "admin_comment": {
+      "type": "string",
+      "private": true,
+      "default": "-"
+    },
+    "telegram": {
+      "type": "component",
+      "repeatable": false,
+      "component": "p2p.telegram"
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::selector.selector",
+  "value": {
+    "uid": "api::selector.selector",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "en_give_header",
+      "defaultSortBy": "en_give_header",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_give_header": {
+        "edit": {
+          "label": "en_give_header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_give_header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_give_header": {
+        "edit": {
+          "label": "ru_give_header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_give_header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "en_get_header": {
+        "edit": {
+          "label": "en_get_header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "en_get_header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ru_get_header": {
+        "edit": {
+          "label": "ru_get_header",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ru_get_header",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "search_bar": {
+        "edit": {
+          "label": "search_bar",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "search_bar",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "sections": {
+        "edit": {
+          "label": "sections",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "sections",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "en_give_header",
+        "ru_give_header",
+        "en_get_header"
+      ],
+      "edit": [
+        [
+          {
+            "name": "en_give_header",
+            "size": 6
+          },
+          {
+            "name": "ru_give_header",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "en_get_header",
+            "size": 6
+          },
+          {
+            "name": "ru_get_header",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "search_bar",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "sections",
+            "size": 12
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

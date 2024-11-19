@@ -1,0 +1,212 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::redirect.redirect",
+  "value": {
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "direction",
+      "defaultSortBy": "direction",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "direction": {
+        "edit": {
+          "label": "direction",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "direction",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "id_related_to": {
+        "edit": {
+          "label": "id_related_to",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "id_related_to",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "give": {
+        "edit": {
+          "label": "give",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "give",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "get": {
+        "edit": {
+          "label": "get",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "get",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "isP2P": {
+        "edit": {
+          "label": "isP2P",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "isP2P",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ip": {
+        "edit": {
+          "label": "ip",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ip",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "direction",
+        "id_related_to",
+        "isP2P"
+      ],
+      "edit": [
+        [
+          {
+            "name": "direction",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "id_related_to",
+            "size": 6
+          },
+          {
+            "name": "give",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "get",
+            "size": 4
+          },
+          {
+            "name": "isP2P",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "ip",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "uid": "api::redirect.redirect"
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

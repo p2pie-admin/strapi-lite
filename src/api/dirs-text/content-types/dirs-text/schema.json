@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dirs_texts",
+  "info": {
+    "singularName": "dirs-text",
+    "pluralName": "dirs-texts",
+    "displayName": "Dirs Text",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "text": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "section_give": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "crypto",
+        "bank",
+        "cash",
+        "digital",
+        "transfer"
+      ],
+      "default": "crypto",
+      "required": true
+    },
+    "section_get": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "crypto",
+        "bank",
+        "cash",
+        "digital",
+        "transfer"
+      ],
+      "default": "crypto"
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

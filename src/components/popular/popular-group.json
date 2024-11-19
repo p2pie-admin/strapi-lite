@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_popular_popular_groups",
+  "info": {
+    "displayName": "group",
+    "icon": "genderless",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "en_name": {
+      "type": "string",
+      "required": true
+    },
+    "ru_name": {
+      "type": "string"
+    },
+    "pms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pm.pm"
+    }
+  }
+}
