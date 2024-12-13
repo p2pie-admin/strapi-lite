@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pms-text service
+ * pm-layout service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::pms-text.pms-text');
+module.exports = createCoreService('api::pm-layout.pm-layout');

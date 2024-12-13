@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "pms_texts",
+  "collectionName": "pm_layouts",
   "info": {
-    "singularName": "pms-text",
-    "pluralName": "pms-texts",
-    "displayName": "Pms Text",
+    "singularName": "pm-layout",
+    "pluralName": "pm-layouts",
+    "displayName": "Pm Layout",
     "description": ""
   },
   "options": {
@@ -23,7 +23,7 @@
         }
       },
       "type": "text",
-      "required": true
+      "maxLength": 222
     },
     "section": {
       "pluginOptions": {
@@ -39,12 +39,8 @@
         "digital",
         "transfer"
       ],
-      "default": "crypto"
-    },
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article"
+      "default": "crypto",
+      "required": true
     }
   }
 }

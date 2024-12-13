@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pms-text controller
+ * pm-layout controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::pms-text.pms-text');
+module.exports = createCoreController('api::pm-layout.pm-layout');

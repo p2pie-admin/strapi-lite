@@ -2,21 +2,17 @@ services:
   strapi:
     container_name: strapi
     image: darkshrine/strapi:latest
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
+    build: .
     restart: always
     env_file: .env
     environment:
       DATABASE_CLIENT: sqlite
-      DATABASE_FILENAME: /opt/app/data/data.db
+      DATABASE_FILENAME: ./data/data.db
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       NODE_ENV: ${NODE_ENV}
     volumes:
-      - ./.env:/opt/app/.env
-      - ./data:/opt/app/data # Mount the SQLite database file
-      - config:/opt/app/config # Config Sync
+      - data:/opt/app/data
     ports:
       - "1337:1337"
     networks:
@@ -44,7 +40,7 @@ services:
     restart: unless-stopped
     ports:
       - "80:80" # HTTP
-      - "81:81" # admin@example.com changeme
+      - "81:81" # Nginx Proxy Manager UI
       - "443:443" # HTTPS
     volumes:
       - npm-data:/data
@@ -52,24 +48,10 @@ services:
     networks:
       - my-network
 
-  nginx:
-    container_name: nginx
-    image: nginx:latest
-    restart: unless-stopped
-    volumes:
-      - nginx-html:/usr/share/nginx/html
-    depends_on:
-      - npm
-    networks:
-      - my-network
-
 volumes:
-  config:
-  public:
-  npm-data:
-  npm-letsencrypt:
-  nginx-html:
-
+  data:
+  npm-data: # Persistent storage for NPM's data
+  npm-letsencrypt: # Persistent storage for Let's Encrypt certificates
 networks:
   my-network:
     name: my-network

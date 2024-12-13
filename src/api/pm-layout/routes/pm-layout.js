@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pms-text router
+ * pm-layout router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::pms-text.pms-text');
+module.exports = createCoreRouter('api::pm-layout.pm-layout');
