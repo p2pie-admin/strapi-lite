@@ -13,6 +13,7 @@ services:
       NODE_ENV: ${NODE_ENV}
     volumes:
       - data:/opt/app/data
+      - public:/opt/app/public
     ports:
       - "1337:1337"
     networks:
@@ -49,6 +50,7 @@ services:
       - my-network
 
 volumes:
+  public:
   data:
   npm-data: # Persistent storage for NPM's data
   npm-letsencrypt: # Persistent storage for Let's Encrypt certificates

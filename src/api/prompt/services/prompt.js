@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * parameter service
+ * prompt service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::parameter.parameter');
+module.exports = createCoreService('api::prompt.prompt');

@@ -1,0 +1,140 @@
+version: "3.9"
+
+services:
+  stats:
+    restart: always
+    container_name: stats
+    image: darkshrine/stats:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.000"
+    networks:
+      - my-network
+
+  parser:
+    restart: always
+    container_name: parser
+    image: darkshrine/parser:latest
+    ports:
+      - "5005:5005"
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.000"
+    networks:
+      - my-network
+
+  redis:
+    restart: always
+    container_name: redis
+    image: redis:latest
+    volumes:
+      - redis_data:/data
+    networks:
+      - my-network
+
+  server:
+    restart: always
+    container_name: server
+    image: darkshrine/server:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    networks:
+      - my-network
+
+  strapi:
+    container_name: strapi
+    image: darkshrine/strapi:latest
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: ./data/data.db
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - data:/opt/app/data
+      - public:/opt/app/public
+    ports:
+      - "1337:1337"
+    networks:
+      - my-network
+
+  converter:
+    container_name: converter
+    image: darkshrine/converter:latest
+    restart: always
+    env_file: .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      STRAPI: ${STRAPI}
+      EXCHANGERATESAPI_URL: ${EXCHANGERATESAPI_URL}
+    ports:
+      - "5001:5001"
+    networks:
+      - my-network
+    depends_on:
+      - strapi
+
+  cloudflared:
+    container_name: cloudflared
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - my-network # Add this line if needed
+  # npm:
+  #   container_name: npm
+  #   image: "jc21/nginx-proxy-manager:latest"
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #     - "81:81"
+  #     - "443:443"
+  #   volumes:
+  #     - npm-data:/data
+  #     - npm-letsencrypt:/etc/letsencrypt
+  #   networks:
+  #     - my-network
+
+  # nginx:
+  #   container_name: nginx
+  #   image: nginx:latest
+  #   restart: unless-stopped
+  #   volumes:
+  #     - nginx-html:/usr/share/nginx/html
+  #   depends_on:
+  #     - npm
+  #   networks:
+  #     - my-network
+
+volumes:
+  redis_data:
+  data:
+  public:
+  # npm-data:
+  # npm-letsencrypt:
+  # nginx-html:
+
+networks:
+  my-network:
+    name: my-network # Forces Docker to use this exact name
+    driver: bridge

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * parameter router
+ * prompt router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::parameter.parameter');
+module.exports = createCoreRouter('api::prompt.prompt');
