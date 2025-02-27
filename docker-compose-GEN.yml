@@ -96,45 +96,44 @@ services:
     container_name: cloudflared
     image: cloudflare/cloudflared:latest
     restart: unless-stopped
-    command: tunnel --no-autoupdate run
-    environment:
-      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     networks:
-      - my-network # Add this line if needed
-  # npm:
-  #   container_name: npm
-  #   image: "jc21/nginx-proxy-manager:latest"
-  #   restart: unless-stopped
-  #   ports:
-  #     - "80:80"
-  #     - "81:81"
-  #     - "443:443"
-  #   volumes:
-  #     - npm-data:/data
-  #     - npm-letsencrypt:/etc/letsencrypt
-  #   networks:
-  #     - my-network
+      - my-network
 
-  # nginx:
-  #   container_name: nginx
-  #   image: nginx:latest
-  #   restart: unless-stopped
-  #   volumes:
-  #     - nginx-html:/usr/share/nginx/html
-  #   depends_on:
-  #     - npm
-  #   networks:
-  #     - my-network
+  npm:
+    container_name: npm
+    image: "jc21/nginx-proxy-manager:latest"
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - npm-data:/data
+      - npm-letsencrypt:/etc/letsencrypt
+    networks:
+      - my-network
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - nginx-html:/usr/share/nginx/html
+    depends_on:
+      - npm
+    networks:
+      - my-network
 
 volumes:
   redis_data:
   data:
   public:
-  # npm-data:
-  # npm-letsencrypt:
-  # nginx-html:
+  npm-data:
+  npm-letsencrypt:
+  nginx-html:
 
 networks:
   my-network:
-    name: my-network # Forces Docker to use this exact name
+    name: my-network
     driver: bridge

@@ -17,11 +17,13 @@
       "maxLength": 24,
       "minLength": 2,
       "unique": true,
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
-    "description": {
+    "ru_description": {
       "type": "text",
-      "maxLength": 250
+      "maxLength": 250,
+      "pluginOptions": {}
     },
     "logo": {
       "type": "media",
@@ -29,7 +31,8 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "status": {
       "type": "enumeration",
@@ -39,45 +42,64 @@
         "disabled"
       ],
       "default": "disabled",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "tag": {
       "type": "enumeration",
       "enum": [
         "pro",
         "new"
-      ]
-    },
-    "contacts": {
-      "type": "component",
-      "repeatable": false,
-      "component": "exchanger.exchanger",
-      "private": true
+      ],
+      "pluginOptions": {}
     },
     "date_listed": {
       "type": "string",
-      "regex": "^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$"
+      "regex": "^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$",
+      "pluginOptions": {}
     },
     "rates_link": {
       "type": "string",
       "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
       "required": true,
-      "unique": true
+      "unique": false,
+      "pluginOptions": {}
     },
     "ref_link": {
       "type": "string",
       "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
-      "unique": true
+      "unique": false,
+      "pluginOptions": {}
     },
     "admin_comment": {
       "type": "text",
-      "private": true
+      "private": true,
+      "pluginOptions": {}
     },
     "admin_rating": {
       "type": "decimal",
       "default": 0,
       "min": 0,
-      "max": 5
+      "max": 5,
+      "pluginOptions": {}
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 60,
+      "pluginOptions": {}
+    },
+    "telegram": {
+      "type": "string",
+      "maxLength": 60,
+      "pluginOptions": {}
+    },
+    "working_time": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "en_description": {
+      "type": "text",
+      "maxLength": 250
     }
   }
 }
