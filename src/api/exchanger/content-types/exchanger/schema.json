@@ -22,7 +22,7 @@
     },
     "ru_description": {
       "type": "text",
-      "maxLength": 250,
+      "maxLength": 1500,
       "pluginOptions": {}
     },
     "logo": {
@@ -99,7 +99,7 @@
     },
     "en_description": {
       "type": "text",
-      "maxLength": 250
+      "maxLength": 1500
     }
   }
 }
