@@ -100,6 +100,22 @@
     "en_description": {
       "type": "text",
       "maxLength": 1500
+    },
+    "source": {
+      "type": "enumeration",
+      "enum": [
+        "bestchange",
+        "kursexpert"
+      ]
+    },
+    "addresses": {
+      "type": "text",
+      "maxLength": 330
+    },
+    "exchanger_links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exchanger-link.exchanger-link"
     }
   }
 }
