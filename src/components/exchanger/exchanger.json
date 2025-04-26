@@ -1,7 +1,7 @@
 {
   "collectionName": "components_exchanger_exchangers",
   "info": {
-    "displayName": "exchanger contacts",
+    "displayName": "exchanger card",
     "icon": "file-medical-alt",
     "description": ""
   },
@@ -19,6 +19,30 @@
     },
     "whatsapp": {
       "type": "string"
+    },
+    "date_listed": {
+      "type": "string"
+    },
+    "working_time": {
+      "type": "string"
+    },
+    "en_description": {
+      "type": "text"
+    },
+    "ru_description": {
+      "type": "text"
+    },
+    "bc_card_link": {
+      "type": "string"
+    },
+    "support": {
+      "type": "customField",
+      "options": [
+        "chat",
+        "auto",
+        "hybrid"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }

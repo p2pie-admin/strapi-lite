@@ -20,11 +20,6 @@
       "required": true,
       "pluginOptions": {}
     },
-    "ru_description": {
-      "type": "text",
-      "maxLength": 1500,
-      "pluginOptions": {}
-    },
     "logo": {
       "type": "media",
       "multiple": false,
@@ -53,15 +48,10 @@
       ],
       "pluginOptions": {}
     },
-    "date_listed": {
-      "type": "string",
-      "regex": "^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$",
-      "pluginOptions": {}
-    },
     "rates_link": {
       "type": "string",
       "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
-      "required": true,
+      "required": false,
       "unique": false,
       "pluginOptions": {}
     },
@@ -83,39 +73,15 @@
       "max": 5,
       "pluginOptions": {}
     },
-    "email": {
-      "type": "string",
-      "maxLength": 60,
-      "pluginOptions": {}
+    "exchanger_card": {
+      "type": "component",
+      "repeatable": false,
+      "component": "exchanger.exchanger"
     },
-    "telegram": {
-      "type": "string",
-      "maxLength": 60,
-      "pluginOptions": {}
-    },
-    "working_time": {
-      "type": "string",
-      "pluginOptions": {}
-    },
-    "en_description": {
-      "type": "text",
-      "maxLength": 1500
-    },
-    "source": {
-      "type": "enumeration",
-      "enum": [
-        "bestchange",
-        "kursexpert"
-      ]
-    },
-    "addresses": {
-      "type": "text",
-      "maxLength": 330
-    },
-    "exchanger_links": {
+    "monitorings": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::exchanger-link.exchanger-link"
+      "target": "api::monitoring.monitoring"
     }
   }
 }

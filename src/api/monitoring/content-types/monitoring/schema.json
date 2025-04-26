@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "monitorings",
+  "info": {
+    "singularName": "monitoring",
+    "pluralName": "monitorings",
+    "displayName": "Monitoring"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
