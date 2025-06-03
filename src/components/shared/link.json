@@ -8,7 +8,7 @@
   "attributes": {
     "text": {
       "type": "string",
-      "maxLength": 25,
+      "maxLength": 250,
       "required": false
     },
     "href": {

@@ -100,30 +100,30 @@ services:
     networks:
       - my-network
 
-  npm:
-    container_name: npm
-    image: "jc21/nginx-proxy-manager:latest"
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "81:81"
-      - "443:443"
-    volumes:
-      - npm-data:/data
-      - npm-letsencrypt:/etc/letsencrypt
-    networks:
-      - my-network
+  # npm:
+  #   container_name: npm
+  #   image: "jc21/nginx-proxy-manager:latest"
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #     - "81:81"
+  #     - "443:443"
+  #   volumes:
+  #     - npm-data:/data
+  #     - npm-letsencrypt:/etc/letsencrypt
+  #   networks:
+  #     - my-network
 
-  nginx:
-    container_name: nginx
-    image: nginx:latest
-    restart: unless-stopped
-    volumes:
-      - nginx-html:/usr/share/nginx/html
-    depends_on:
-      - npm
-    networks:
-      - my-network
+  # nginx:
+  #   container_name: nginx
+  #   image: nginx:latest
+  #   restart: unless-stopped
+  #   volumes:
+  #     - nginx-html:/usr/share/nginx/html
+  #   depends_on:
+  #     - npm
+  #   networks:
+  #     - my-network
 
 volumes:
   redis_data:

@@ -23,7 +23,7 @@
         }
       },
       "type": "string",
-      "maxLength": 50
+      "maxLength": 200
     },
     "subheader": {
       "pluginOptions": {
@@ -32,7 +32,7 @@
         }
       },
       "type": "string",
-      "maxLength": 120
+      "maxLength": 300
     },
     "code": {
       "pluginOptions": {
@@ -58,6 +58,22 @@
         }
       },
       "type": "json"
+    },
+    "meta_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "meta_description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

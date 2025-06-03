@@ -8,7 +8,7 @@
   "attributes": {
     "title": {
       "type": "string",
-      "maxLength": 60
+      "maxLength": 300
     },
     "text": {
       "type": "string",
