@@ -3,7 +3,7 @@ eval "$(ssh-agent -s)"
 ssh-add /Users/admin/.ssh/id_rsa
 # Remote server details
 REMOTE_USER="strapi"
-REMOTE_HOST="10.0.0.209"
+REMOTE_HOST="10.0.0.191"
 REMOTE_PATH="/"
 BACKUP_DIR="./_backup"
 
