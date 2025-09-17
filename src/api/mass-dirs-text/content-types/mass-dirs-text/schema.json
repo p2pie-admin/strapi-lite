@@ -4,7 +4,8 @@
   "info": {
     "singularName": "mass-dirs-text",
     "pluralName": "mass-dirs-texts",
-    "displayName": "Mass Dirs Text"
+    "displayName": "Mass Dirs Text",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -19,22 +20,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::currency.currency"
-    },
-    "section": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "crypto",
-        "bank",
-        "cash",
-        "digital",
-        "transfer"
-      ],
-      "default": "crypto"
     },
     "isSell": {
       "pluginOptions": {
