@@ -19,41 +19,9 @@ services:
     networks:
       - my-network
 
-  converter:
-    container_name: converter
-    image: darkshrine/converter:latest
-    restart: always
-    env_file: .env
-    environment:
-      NODE_ENV: ${NODE_ENV}
-      STRAPI: ${STRAPI}
-      EXCHANGERATESAPI_URL: ${EXCHANGERATESAPI_URL}
-    ports:
-      - "5001:5001"
-    networks:
-      - my-network
-    depends_on:
-      - strapi
-
-  npm:
-    container_name: npm
-    image: "jc21/nginx-proxy-manager:latest"
-    restart: unless-stopped
-    ports:
-      - "80:80" # HTTP
-      - "81:81" # Nginx Proxy Manager UI
-      - "443:443" # HTTPS
-    volumes:
-      - npm-data:/data
-      - npm-letsencrypt:/etc/letsencrypt
-    networks:
-      - my-network
-
 volumes:
   public:
   data:
-  npm-data: # Persistent storage for NPM's data
-  npm-letsencrypt: # Persistent storage for Let's Encrypt certificates
 networks:
   my-network:
     name: my-network

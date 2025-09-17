@@ -18,7 +18,8 @@
       "minLength": 2,
       "unique": true,
       "required": true,
-      "pluginOptions": {}
+      "pluginOptions": {},
+      "regex": "^[A-Za-z0-9\\- ]+$"
     },
     "logo": {
       "type": "media",
@@ -36,7 +37,7 @@
         "suspended",
         "disabled"
       ],
-      "default": "disabled",
+      "default": "active",
       "required": true,
       "pluginOptions": {}
     },

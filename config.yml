@@ -1,0 +1,13 @@
+tunnel: default # not needed with token, just a placeholder
+token: ${TUNNEL_TOKEN}
+
+ingress:
+  - hostname: cms.rusrates.help
+    service: http://strapi:1337
+  - hostname: stats.rusrates.help
+    service: http://stats:3000
+  - hostname: server.rusrates.help
+    service: http://server:5000
+  - hostname: converter.rusrates.help
+    service: http://converter:5001
+  - service: http_status:404

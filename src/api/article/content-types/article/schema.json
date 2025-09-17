@@ -59,7 +59,7 @@
       },
       "type": "json"
     },
-    "meta_title": {
+    "seo_title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -67,7 +67,7 @@
       },
       "type": "string"
     },
-    "meta_description": {
+    "seo_description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
