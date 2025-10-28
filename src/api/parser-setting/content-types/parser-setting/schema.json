@@ -58,6 +58,12 @@
       "default": 0.5,
       "min": 0.01,
       "max": 2
+    },
+    "max_skip": {
+      "type": "integer",
+      "default": 64,
+      "min": 32,
+      "max": 2048
     }
   }
 }
