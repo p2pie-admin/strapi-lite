@@ -6,8 +6,13 @@ ssh-add /Users/admin/.ssh/id_rsa
 
 # REMOTE_USER="strapi"
 # REMOTE_HOST="10.0.0.190"
- REMOTE_USER="artur"
- REMOTE_HOST="10.0.0.33"
+
+#  REMOTE_USER="artur"
+#  REMOTE_HOST="10.0.0.33"
+
+ REMOTE_USER="root"
+ REMOTE_HOST="188.68.223.112"
+
 REMOTE_PATH="/"
 BACKUP_DIR="./_backup"
 

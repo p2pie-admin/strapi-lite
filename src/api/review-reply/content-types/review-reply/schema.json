@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "review_replies",
+  "info": {
+    "singularName": "review-reply",
+    "pluralName": "review-replies",
+    "displayName": "Review Reply"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true,
+      "maxLength": 10000
+    },
+    "review": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::review.review",
+      "inversedBy": "review_replies"
+    },
+    "screenshots": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "from": {
+      "type": "enumeration",
+      "enum": [
+        "author",
+        "admin",
+        "exchanger"
+      ],
+      "required": true
+    },
+    "likes": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "iaApproved": {
+      "type": "boolean"
+    }
+  }
+}

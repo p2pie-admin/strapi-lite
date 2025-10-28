@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offices",
+  "info": {
+    "singularName": "office",
+    "pluralName": "offices",
+    "displayName": "Office",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "coordinates": {
+      "type": "string",
+      "required": true
+    },
+    "city_code": {
+      "type": "string"
+    },
+    "exchanger": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::exchanger.exchanger",
+      "inversedBy": "offices"
+    },
+    "visible": {
+      "type": "boolean",
+      "default": true
+    },
+    "working_time": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 1000
+    }
+  }
+}

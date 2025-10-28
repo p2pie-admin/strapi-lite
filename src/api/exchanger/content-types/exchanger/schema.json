@@ -83,6 +83,18 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::monitoring.monitoring"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "exchanger"
+    },
+    "offices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::office.office",
+      "mappedBy": "exchanger"
     }
   }
 }

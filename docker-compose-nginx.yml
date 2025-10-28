@@ -1,0 +1,103 @@
+services:
+  stats:
+    restart: always
+    container_name: stats
+    image: darkshrine/stats:latest
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    networks:
+      - my-network
+
+  parser:
+    restart: always
+    container_name: parser
+    image: darkshrine/parser:latest
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    networks:
+      - my-network
+
+  redis:
+    restart: always
+    container_name: redis
+    image: redis:latest
+    env_file:
+      - .env
+    volumes:
+      - redis_data:/data
+    networks:
+      - my-network
+
+  server:
+    restart: always
+    container_name: server
+    image: darkshrine/server:latest
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    networks:
+      - my-network
+
+  strapi:
+    container_name: strapi
+    image: darkshrine/strapi:latest
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: ./data/data.db
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - data:/opt/app/data
+      - public:/opt/app/public # <-- critical for uploads
+      - config_sync:/opt/app/config/sync
+    networks:
+      - my-network
+
+  converter:
+    container_name: converter
+    image: darkshrine/converter:latest
+    restart: always
+    env_file: .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      STRAPI: ${STRAPI}
+      EXCHANGERATESAPI_URL: ${EXCHANGERATESAPI_URL}
+    networks:
+      - my-network
+    depends_on:
+      - strapi
+
+  npm-app:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: npm-app
+    restart: always
+    ports:
+      - "80:80" # http
+      - "81:81" # admin UI
+      - "443:443" # https
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+    networks:
+      - my-network
+
+volumes:
+  redis_data:
+  data:
+  public:
+  config_sync:
+  npm_data:
+  npm_letsencrypt:
+
+networks:
+  my-network:
+    name: my-network
+    driver: bridge

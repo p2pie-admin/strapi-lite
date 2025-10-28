@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "exchanger": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::exchanger.exchanger",
+      "inversedBy": "reviews"
+    },
+    "fingerprint": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true,
+      "maxLength": 10000
+    },
+    "screenshots": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "positive",
+        "neutral",
+        "negative",
+        "question"
+      ],
+      "required": true
+    },
+    "isDispute": {
+      "type": "boolean"
+    },
+    "isClosed": {
+      "type": "boolean"
+    },
+    "likes": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "isApproved": {
+      "type": "boolean"
+    },
+    "admin_comment": {
+      "type": "string",
+      "private": true
+    },
+    "categories": {
+      "type": "string"
+    },
+    "ipAddress": {
+      "type": "string",
+      "private": true
+    },
+    "userAgent": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "ai_data": {
+      "type": "json"
+    },
+    "review_replies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review-reply.review-reply",
+      "mappedBy": "review"
+    }
+  }
+}
