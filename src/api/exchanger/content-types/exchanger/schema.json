@@ -95,6 +95,13 @@
       "relation": "oneToMany",
       "target": "api::office.office",
       "mappedBy": "exchanger"
+    },
+    "parameters": {
+      "type": "dynamiczone",
+      "components": [
+        "exchanger.exchanger-parameters"
+      ],
+      "required": false
     }
   }
 }

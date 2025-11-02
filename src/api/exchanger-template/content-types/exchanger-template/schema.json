@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exchanger_templates",
+  "info": {
+    "singularName": "exchanger-template",
+    "pluralName": "exchanger-templates",
+    "displayName": "exchanger template"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "private": true,
+      "required": true
+    },
+    "templates": {
+      "type": "dynamiczone",
+      "components": [
+        "exchanger.exchanger-parameters"
+      ],
+      "min": 1,
+      "required": true
+    }
+  }
+}

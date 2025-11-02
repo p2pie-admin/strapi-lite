@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_exchanger_exchanger_parameters",
+  "info": {
+    "displayName": "exchanger templates",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "top_parameter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::top-parameter.top-parameter"
+    },
+    "include": {
+      "type": "text",
+      "required": true
+    },
+    "exclude": {
+      "type": "text"
+    }
+  }
+}
