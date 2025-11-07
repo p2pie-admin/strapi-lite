@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_exchanger_monitorings",
+  "info": {
+    "displayName": "Monitoring",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "monitoring": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::monitoring.monitoring"
+    }
+  }
+}

@@ -5,6 +5,9 @@ module.exports = {
   "drag-drop-content-types": {
     enabled: true,
   },
+  superfields: {
+    enabled: true,
+  },
   i18n: {
     enabled: true,
     config: {

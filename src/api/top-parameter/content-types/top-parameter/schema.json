@@ -4,7 +4,7 @@
   "info": {
     "singularName": "top-parameter",
     "pluralName": "top-parameters",
-    "displayName": "Top Parameter",
+    "displayName": "Top parameter",
     "description": ""
   },
   "options": {
@@ -28,31 +28,6 @@
     "ru_name": {
       "type": "string",
       "maxLength": 24
-    },
-    "color": {
-      "type": "enumeration",
-      "enum": [
-        "gray",
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "teal",
-        "blue",
-        "cyan",
-        "purple",
-        "pink",
-        "dark_gray",
-        "dark_red",
-        "dark_orange",
-        "dark_yellow",
-        "dark_green",
-        "dark_teal",
-        "dark_blue",
-        "dark_cyan",
-        "dark_purple",
-        "dark_pink"
-      ]
     }
   }
 }

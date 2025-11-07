@@ -52,11 +52,6 @@
     "isClosed": {
       "type": "boolean"
     },
-    "likes": {
-      "type": "integer",
-      "min": 0,
-      "default": 0
-    },
     "isApproved": {
       "type": "boolean"
     },
@@ -85,6 +80,19 @@
       "relation": "oneToMany",
       "target": "api::review-reply.review-reply",
       "mappedBy": "review"
+    },
+    "honeypot": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

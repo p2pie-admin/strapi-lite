@@ -4,7 +4,8 @@
   "info": {
     "singularName": "exchanger-template",
     "pluralName": "exchanger-templates",
-    "displayName": "exchanger template"
+    "displayName": "exchanger template",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -16,13 +17,28 @@
       "private": true,
       "required": true
     },
-    "templates": {
-      "type": "dynamiczone",
-      "components": [
-        "exchanger.exchanger-parameters"
-      ],
-      "min": 1,
+    "cities": {
+      "type": "text"
+    },
+    "include": {
+      "type": "text",
       "required": true
+    },
+    "exclude": {
+      "type": "text"
+    },
+    "top_parameter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::top-parameter.top-parameter"
+    },
+    "show_in_rates": {
+      "type": "boolean",
+      "default": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

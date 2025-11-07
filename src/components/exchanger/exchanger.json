@@ -14,8 +14,7 @@
       "type": "email"
     },
     "phone_number": {
-      "type": "string",
-      "regex": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$"
+      "type": "string"
     },
     "whatsapp": {
       "type": "string"
@@ -32,17 +31,10 @@
     "ru_description": {
       "type": "text"
     },
-    "bc_card_link": {
-      "type": "string"
-    },
-    "support": {
-      "type": "customField",
-      "options": [
-        "chat",
-        "auto",
-        "hybrid"
-      ],
-      "customField": "plugin::multi-select.multi-select"
+    "total_reserve_usd": {
+      "type": "biginteger",
+      "min": "0",
+      "max": "90000000"
     }
   }
 }

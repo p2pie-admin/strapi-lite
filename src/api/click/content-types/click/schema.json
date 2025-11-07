@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clicks",
+  "info": {
+    "singularName": "click",
+    "pluralName": "clicks",
+    "displayName": "click"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "identificator": {
+      "type": "string",
+      "required": true
+    },
+    "fingerprint": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "userAgent": {
+      "type": "string"
+    },
+    "ipAddress": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}

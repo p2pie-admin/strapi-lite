@@ -14,10 +14,12 @@
   "attributes": {
     "coordinates": {
       "type": "string",
-      "required": true
+      "required": true,
+      "regex": "^([-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)),\\s*([-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?))$"
     },
-    "city_code": {
-      "type": "string"
+    "city": {
+      "type": "string",
+      "required": true
     },
     "exchanger": {
       "type": "relation",
@@ -33,16 +35,20 @@
       "type": "string"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "description": {
       "type": "text",
       "maxLength": 1000
+    },
+    "address": {
+      "type": "string",
+      "required": true
     }
   }
 }

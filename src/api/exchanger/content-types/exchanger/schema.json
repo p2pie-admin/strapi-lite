@@ -79,11 +79,6 @@
       "repeatable": false,
       "component": "exchanger.exchanger"
     },
-    "monitorings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::monitoring.monitoring"
-    },
     "reviews": {
       "type": "relation",
       "relation": "oneToMany",
@@ -96,12 +91,21 @@
       "target": "api::office.office",
       "mappedBy": "exchanger"
     },
-    "parameters": {
+    "exchanger_templates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exchanger-template.exchanger-template"
+    },
+    "monitorings": {
       "type": "dynamiczone",
       "components": [
-        "exchanger.exchanger-parameters"
-      ],
-      "required": false
+        "exchanger.monitoring"
+      ]
+    },
+    "exchanger_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exchanger-tag.exchanger-tag"
     }
   }
 }
