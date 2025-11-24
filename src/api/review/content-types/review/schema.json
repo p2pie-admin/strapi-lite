@@ -59,12 +59,8 @@
       "type": "string",
       "private": true
     },
-    "categories": {
-      "type": "string"
-    },
     "ipAddress": {
-      "type": "string",
-      "private": true
+      "type": "string"
     },
     "userAgent": {
       "type": "string"
@@ -93,6 +89,31 @@
     },
     "name": {
       "type": "string"
+    },
+    "review_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review-category.review-category"
+    },
+    "bid_number": {
+      "type": "string",
+      "maxLength": 45
+    },
+    "exchange_happened": {
+      "type": "boolean"
+    },
+    "dir": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "float"
+    },
+    "isExchangeDone": {
+      "type": "boolean"
+    },
+    "gossip": {
+      "type": "string",
+      "maxLength": 1000
     }
   }
 }

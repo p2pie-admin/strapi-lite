@@ -1,45 +1,13 @@
 #!/bin/bash
+eval "$(ssh-agent -s)"
+ssh-add /Users/admin/.ssh/id_rsa
 
-# --- Select your server (uncomment 1 block) ---
+# Remote server details
 
-# --- SERVER 1 ---
 REMOTE_USER="strapi"
 REMOTE_HOST="10.0.0.190"
-PASS="strapi"
-
-# --- SERVER 2 ---
-# REMOTE_USER="artur"
-# REMOTE_HOST="10.0.0.33"
-# PASS="Speakingclub1"
-
-# --- SERVER 3 (active) ---
-# REMOTE_USER="root"
-# REMOTE_HOST="172.16.12.21"
-# PASS="@p00l4z"
 
 
-# --- SSH key path ---
-SSH_KEY="/Users/admin/.ssh/id_rsa"
-
-# Try to load SSH key using passphrase
-echo "Trying to unlock SSH key..."
-SSH_ASKPASS_SCRIPT=$(mktemp)
-echo "echo $PASS" > "$SSH_ASKPASS_SCRIPT"
-chmod +x "$SSH_ASKPASS_SCRIPT"
-DISPLAY=none SSH_ASKPASS="$SSH_ASKPASS_SCRIPT" setsid ssh-add "$SSH_KEY" </dev/null 2>/dev/null
-
-if [[ $? -ne 0 ]]; then
-  echo "SSH key unlock failed, falling back to password login..."
-  USE_PASSWORD=true
-else
-  echo "SSH key unlocked successfully"
-  USE_PASSWORD=false
-fi
-
-rm -f "$SSH_ASKPASS_SCRIPT"
-
-
-# --- Remote base path and backup directory ---
 REMOTE_PATH="/"
 BACKUP_DIR="./_backup"
 
@@ -48,14 +16,8 @@ DATA_VOL="${REMOTE_USER}_data"
 PUBLIC_VOL="${REMOTE_USER}_public"
 CONFIG_SYNC_VOL="${REMOTE_USER}_config_sync"
 
-# SSH and SCP commands based on key or password
-if [[ "$USE_PASSWORD" = true ]]; then
-  SSH_CMD="sshpass -p \"$PASS\" ssh $REMOTE_USER@$REMOTE_HOST"
-  SCP_CMD="sshpass -p \"$PASS\" scp"
-else
-  SSH_CMD="ssh $REMOTE_USER@$REMOTE_HOST"
-  SCP_CMD="scp"
-fi
+# SSH command
+SSH_CMD="ssh $REMOTE_USER@$REMOTE_HOST"
 
 # Ensure backup directory exists
 mkdir -p "$BACKUP_DIR"
@@ -86,9 +48,9 @@ _backup_volumes() {
                tar -czf /_backup/config_sync.tar.gz -C / config_sync'"
 
     echo "Downloading backups to local machine..."
-    $SCP_CMD "$REMOTE_USER@$REMOTE_HOST:/tmp/data.tar.gz" "$BACKUP_DIR/data.tar.gz"
-    $SCP_CMD "$REMOTE_USER@$REMOTE_HOST:/tmp/public.tar.gz" "$BACKUP_DIR/public.tar.gz"
-    $SCP_CMD "$REMOTE_USER@$REMOTE_HOST:/tmp/config_sync.tar.gz" "$BACKUP_DIR/config_sync.tar.gz"
+    scp "$REMOTE_USER@$REMOTE_HOST:/tmp/data.tar.gz" "$BACKUP_DIR/data.tar.gz"
+    scp "$REMOTE_USER@$REMOTE_HOST:/tmp/public.tar.gz" "$BACKUP_DIR/public.tar.gz"
+    scp "$REMOTE_USER@$REMOTE_HOST:/tmp/config_sync.tar.gz" "$BACKUP_DIR/config_sync.tar.gz"
 
     echo "Cleaning up temporary files on server..."
     $SSH_CMD "rm /tmp/data.tar.gz /tmp/public.tar.gz /tmp/config_sync.tar.gz"
@@ -108,9 +70,9 @@ restore_volumes() {
     stop_containers
 
     echo "Uploading backups to the server..."
-    $SCP_CMD "$BACKUP_DIR/data.tar.gz" "$REMOTE_USER@$REMOTE_HOST:/tmp/data.tar.gz"
-    $SCP_CMD "$BACKUP_DIR/public.tar.gz" "$REMOTE_USER@$REMOTE_HOST:/tmp/public.tar.gz"
-    $SCP_CMD "$BACKUP_DIR/config_sync.tar.gz" "$REMOTE_USER@$REMOTE_HOST:/tmp/config_sync.tar.gz"
+    scp "$BACKUP_DIR/data.tar.gz" "$REMOTE_USER@$REMOTE_HOST:/tmp/data.tar.gz"
+    scp "$BACKUP_DIR/public.tar.gz" "$REMOTE_USER@$REMOTE_HOST:/tmp/public.tar.gz"
+    scp "$BACKUP_DIR/config_sync.tar.gz" "$REMOTE_USER@$REMOTE_HOST:/tmp/config_sync.tar.gz"
 
     echo "Restoring volumes on the server..."
     $SSH_CMD "docker run --rm -v ${DATA_VOL}:/data -v /tmp:/_backup alpine \
@@ -135,10 +97,19 @@ while true; do
     read -rp "Enter your choice: " choice
 
     case $choice in
-        1) _backup_volumes ;;
-        2) restore_volumes ;;
-        3) echo "Exiting..."; exit 0 ;;
-        *) echo "Invalid choice. Please try again." ;;
+        1)
+            _backup_volumes
+            ;;
+        2)
+            restore_volumes
+            ;;
+        3)
+            echo "Exiting..."
+            exit 0
+            ;;
+        *)
+            echo "Invalid choice. Please try again."
+            ;;
     esac
     echo ""
 done

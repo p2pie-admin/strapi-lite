@@ -106,6 +106,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::exchanger-tag.exchanger-tag"
+    },
+    "display_name": {
+      "type": "string"
     }
   }
 }
