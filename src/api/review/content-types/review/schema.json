@@ -21,7 +21,7 @@
     "fingerprint": {
       "type": "string",
       "unique": true,
-      "required": true
+      "required": false
     },
     "text": {
       "type": "text",
@@ -95,25 +95,15 @@
       "relation": "oneToMany",
       "target": "api::review-category.review-category"
     },
-    "bid_number": {
-      "type": "string",
-      "maxLength": 45
-    },
-    "exchange_happened": {
-      "type": "boolean"
-    },
-    "dir": {
-      "type": "string"
-    },
-    "amount": {
-      "type": "float"
-    },
     "isExchangeDone": {
       "type": "boolean"
     },
     "gossip": {
       "type": "string",
       "maxLength": 1000
+    },
+    "isVerified": {
+      "type": "boolean"
     }
   }
 }

@@ -35,6 +35,16 @@
       "type": "biginteger",
       "min": "0",
       "max": "90000000"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "UTC": {
+      "type": "integer",
+      "default": 3
+    },
+    "date_created": {
+      "type": "string"
     }
   }
 }
