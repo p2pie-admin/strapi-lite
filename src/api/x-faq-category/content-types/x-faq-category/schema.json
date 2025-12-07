@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "x_faq_categories",
+  "info": {
+    "singularName": "x-faq-category",
+    "pluralName": "x-faq-categories",
+    "displayName": "x faq category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "code": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "x_faq": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::x-faq.x-faq",
+      "mappedBy": "x_faq_category"
+    },
+    "color": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "cyan",
+        "purple",
+        "pink",
+        "dark_gray",
+        "dark_red",
+        "dark_orange",
+        "dark_yellow",
+        "dark_green",
+        "dark_teal",
+        "dark_blue",
+        "dark_cyan",
+        "dark_purple",
+        "dark_pink"
+      ]
+    }
+  }
+}
