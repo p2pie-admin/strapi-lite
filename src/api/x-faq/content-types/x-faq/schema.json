@@ -32,12 +32,6 @@
       },
       "type": "text",
       "required": true
-    },
-    "x_faq_category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::x-faq-category.x-faq-category",
-      "inversedBy": "x_faq"
     }
   }
 }

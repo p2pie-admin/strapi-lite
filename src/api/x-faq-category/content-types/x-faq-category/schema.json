@@ -46,11 +46,10 @@
         }
       }
     },
-    "x_faq": {
+    "x_faqs": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::x-faq.x-faq",
-      "mappedBy": "x_faq_category"
+      "relation": "oneToMany",
+      "target": "api::x-faq.x-faq"
     },
     "color": {
       "pluginOptions": {
