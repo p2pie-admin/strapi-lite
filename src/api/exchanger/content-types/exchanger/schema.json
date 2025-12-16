@@ -34,9 +34,12 @@
       "type": "enumeration",
       "enum": [
         "active",
+        "paused",
         "suspended",
         "disabled",
-        "draft"
+        "blacklist",
+        "draft",
+        "draft2"
       ],
       "default": "active",
       "required": true,
@@ -54,14 +57,15 @@
       "type": "string",
       "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
       "required": false,
-      "unique": false,
+      "unique": true,
       "pluginOptions": {}
     },
     "ref_link": {
       "type": "string",
       "regex": "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})",
-      "unique": false,
-      "pluginOptions": {}
+      "unique": true,
+      "pluginOptions": {},
+      "required": false
     },
     "admin_comment": {
       "type": "text",

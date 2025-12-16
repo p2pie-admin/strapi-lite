@@ -4,7 +4,8 @@
   "info": {
     "singularName": "x-faq",
     "pluralName": "x-faqs",
-    "displayName": "X faq"
+    "displayName": "X faq",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -21,7 +22,7 @@
           "localized": true
         }
       },
-      "type": "text",
+      "type": "string",
       "required": true
     },
     "response": {
