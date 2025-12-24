@@ -69,7 +69,8 @@
     },
     "admin_comment": {
       "type": "text",
-      "pluginOptions": {}
+      "pluginOptions": {},
+      "private": true
     },
     "admin_rating": {
       "type": "decimal",

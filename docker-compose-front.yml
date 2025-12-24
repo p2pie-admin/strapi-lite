@@ -1,0 +1,148 @@
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_NAME: "${NEXT_PUBLIC_NAME}"
+        NEXT_PUBLIC_SITE_LANG: "${NEXT_PUBLIC_SITE_LANG}"
+        NEXT_PUBLIC_PRERENDER_LIMIT: "${NEXT_PUBLIC_PRERENDER_LIMIT}"
+        NEXT_PUBLIC_BASE: "${NEXT_PUBLIC_BASE}"
+        NEXT_PUBLIC_INDEX: "${NEXT_PUBLIC_INDEX}"
+        NEXT_PUBLIC_RATES_MIN: "${NEXT_PUBLIC_RATES_MIN}"
+        NEXT_PUBLIC_RATES_RENDER_MIN: "${NEXT_PUBLIC_RATES_RENDER_MIN}"
+        NEXT_PUBLIC_TELEGRAM_SUPPORT: "${NEXT_PUBLIC_TELEGRAM_SUPPORT}"
+        NEXT_PUBLIC_TELEGRAM_BOT: "${NEXT_PUBLIC_TELEGRAM_BOT}"
+        NEXT_PUBLIC_TELEGRAM_CHAT: "${NEXT_PUBLIC_TELEGRAM_CHAT}"
+        NEXT_PUBLIC_GOOGLE_MAPS_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_KEY}"
+        USE_INTERNAL: "${USE_INTERNAL}"
+        INTERNAL_CMS_URL: "${INTERNAL_CMS_URL}"
+        INTERNAL_SERVER_URL: "${INTERNAL_SERVER_URL}"
+        INTERNAL_CONVERTER_URL: "${INTERNAL_CONVERTER_URL}"
+    env_file:
+      - .env
+    environment:
+      USE_INTERNAL: "${USE_INTERNAL}"
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - front_next_cache:/app/.next/cache
+    networks:
+      - my-network
+
+  stats:
+    restart: always
+    container_name: stats
+    image: darkshrine/stats:latest
+    ports:
+      - "3001:3001"
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.000"
+    networks:
+      - my-network
+
+  parser:
+    restart: always
+    container_name: parser
+    image: darkshrine/parser:latest
+    ports:
+      - "5005:5005"
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.000"
+    networks:
+      - my-network
+
+  redis:
+    restart: always
+    container_name: redis
+    image: redis:latest
+    env_file:
+      - .env
+    volumes:
+      - redis_data:/data
+    networks:
+      - my-network
+
+  server:
+    restart: always
+    container_name: server
+    image: darkshrine/server:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    networks:
+      - my-network
+
+  strapi:
+    container_name: strapi
+    image: darkshrine/strapi:latest
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: ./data/data.db
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - data:/opt/app/data
+      - public:/opt/app/public
+      - config_sync:/opt/app/config/sync
+    ports:
+      - "1337:1337"
+    networks:
+      - my-network
+
+  converter:
+    container_name: converter
+    image: darkshrine/converter:latest
+    restart: always
+    env_file: .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      STRAPI: ${STRAPI}
+      EXCHANGERATESAPI_URL: ${EXCHANGERATESAPI_URL}
+    ports:
+      - "5001:5001"
+    networks:
+      - my-network
+    depends_on:
+      - strapi
+
+  cloudflared:
+    container_name: cloudflared
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    env_file:
+      - .env
+    networks:
+      - my-network
+
+volumes:
+  front_next_cache:
+  redis_data:
+  data:
+  public:
+  config_sync:
+
+networks:
+  my-network:
+    name: my-network
+    driver: bridge

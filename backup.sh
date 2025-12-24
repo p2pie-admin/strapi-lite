@@ -4,9 +4,10 @@ ssh-add /Users/admin/.ssh/id_rsa
 
 # Remote server details
 
-REMOTE_USER="strapi"
-REMOTE_HOST="10.0.0.190"
-
+# REMOTE_USER="strapi"
+# REMOTE_HOST="10.0.0.190"
+REMOTE_USER="root"
+REMOTE_HOST="188.68.223.12"
 
 REMOTE_PATH="/"
 BACKUP_DIR="./_backup"

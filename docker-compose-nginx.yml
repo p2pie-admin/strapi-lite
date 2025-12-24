@@ -1,12 +1,50 @@
 services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_NAME: "${NEXT_PUBLIC_NAME}"
+        NEXT_PUBLIC_SITE_LANG: "${NEXT_PUBLIC_SITE_LANG}"
+        NEXT_PUBLIC_PRERENDER_LIMIT: "${NEXT_PUBLIC_PRERENDER_LIMIT}"
+        NEXT_PUBLIC_BASE: "${NEXT_PUBLIC_BASE}"
+        NEXT_PUBLIC_INDEX: "${NEXT_PUBLIC_INDEX}"
+        NEXT_PUBLIC_RATES_MIN: "${NEXT_PUBLIC_RATES_MIN}"
+        NEXT_PUBLIC_RATES_RENDER_MIN: "${NEXT_PUBLIC_RATES_RENDER_MIN}"
+        NEXT_PUBLIC_TELEGRAM_SUPPORT: "${NEXT_PUBLIC_TELEGRAM_SUPPORT}"
+        NEXT_PUBLIC_TELEGRAM_BOT: "${NEXT_PUBLIC_TELEGRAM_BOT}"
+        NEXT_PUBLIC_TELEGRAM_CHAT: "${NEXT_PUBLIC_TELEGRAM_CHAT}"
+        NEXT_PUBLIC_GOOGLE_MAPS_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_KEY}"
+        USE_INTERNAL: "${USE_INTERNAL}"
+        INTERNAL_CMS_URL: "${INTERNAL_CMS_URL}"
+        INTERNAL_SERVER_URL: "${INTERNAL_SERVER_URL}"
+        INTERNAL_CONVERTER_URL: "${INTERNAL_CONVERTER_URL}"
+    env_file:
+      - .env
+    environment:
+      USE_INTERNAL: "${USE_INTERNAL}"
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - front_next_cache:/app/.next/cache
+    networks:
+      - my-network
+
   stats:
     restart: always
     container_name: stats
     image: darkshrine/stats:latest
+    ports:
+      - "3001:3001"
     depends_on:
       - redis
     env_file:
       - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.000"
     networks:
       - my-network
 
@@ -14,10 +52,16 @@ services:
     restart: always
     container_name: parser
     image: darkshrine/parser:latest
+    ports:
+      - "5005:5005"
     depends_on:
       - redis
     env_file:
       - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.000"
     networks:
       - my-network
 
@@ -36,6 +80,8 @@ services:
     restart: always
     container_name: server
     image: darkshrine/server:latest
+    ports:
+      - "5000:5000"
     depends_on:
       - redis
     env_file:
@@ -56,8 +102,10 @@ services:
       NODE_ENV: ${NODE_ENV}
     volumes:
       - data:/opt/app/data
-      - public:/opt/app/public # <-- critical for uploads
+      - public:/opt/app/public
       - config_sync:/opt/app/config/sync
+    ports:
+      - "1337:1337"
     networks:
       - my-network
 
@@ -70,32 +118,35 @@ services:
       NODE_ENV: ${NODE_ENV}
       STRAPI: ${STRAPI}
       EXCHANGERATESAPI_URL: ${EXCHANGERATESAPI_URL}
+    ports:
+      - "5001:5001"
     networks:
       - my-network
     depends_on:
       - strapi
 
-  npm-app:
-    image: jc21/nginx-proxy-manager:latest
-    container_name: npm-app
-    restart: always
+  npmplus:
+    container_name: npmplus
+    image: ghcr.io/zoeyvid/npmplus:latest
+    restart: unless-stopped
     ports:
-      - "80:80" # http
-      - "81:81" # admin UI
-      - "443:443" # https
+      - "80:80"
+      - "81:81"
+      - "443:443"
     volumes:
-      - npm_data:/data
-      - npm_letsencrypt:/etc/letsencrypt
+      - npmplus_data:/data
+      - npmplus_letsencrypt:/etc/letsencrypt
     networks:
       - my-network
 
 volumes:
+  front_next_cache:
   redis_data:
   data:
   public:
   config_sync:
-  npm_data:
-  npm_letsencrypt:
+  npmplus_data:
+  npmplus_letsencrypt:
 
 networks:
   my-network:
