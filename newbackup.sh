@@ -4,7 +4,7 @@ set -x  # trace
 
 # --- SERVER (active) ---
 REMOTE_USER="root"
-REMOTE_HOST="172.16.12.21"
+REMOTE_HOST="172.16.12.91"
 REMOTE_PORT=22
 PASS='@p00l4z'
 

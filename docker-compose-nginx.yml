@@ -41,6 +41,8 @@ services:
       - redis
     env_file:
       - .env
+    environment:
+      - PORT=3001
     deploy:
       resources:
         limits:
@@ -129,6 +131,10 @@ services:
     container_name: npmplus
     image: ghcr.io/zoeyvid/npmplus:latest
     restart: unless-stopped
+    environment:
+      TZ: Europe/Moscow
+    env_file:
+      - "${PWD}/.env.npmplus"
     ports:
       - "80:80"
       - "81:81"
