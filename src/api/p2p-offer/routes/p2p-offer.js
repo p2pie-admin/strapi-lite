@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pm-layout router
+ * p2p-offer router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::pm-layout.pm-layout');
+module.exports = createCoreRouter('api::p2p-offer.p2p-offer');

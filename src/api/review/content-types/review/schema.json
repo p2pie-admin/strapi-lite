@@ -104,6 +104,12 @@
     },
     "isVerified": {
       "type": "boolean"
+    },
+    "p_2_p_maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::p2p-maker.p2p-maker",
+      "inversedBy": "reviews"
     }
   }
 }

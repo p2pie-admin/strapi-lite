@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pm-layout service
+ * p2p-offer service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::pm-layout.pm-layout');
+module.exports = createCoreService('api::p2p-offer.p2p-offer');

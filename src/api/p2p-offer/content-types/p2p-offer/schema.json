@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_offers",
+  "info": {
+    "singularName": "p2p-offer",
+    "pluralName": "p2p-offers",
+    "displayName": "p2p offer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "course": {
+      "type": "float",
+      "required": true,
+      "min": 0
+    },
+    "min": {
+      "type": "float",
+      "required": false,
+      "min": 0
+    },
+    "max": {
+      "type": "float",
+      "min": 0
+    },
+    "fee_amount": {
+      "type": "float",
+      "min": 0
+    },
+    "top_parameters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::top-parameter.top-parameter"
+    },
+    "fee_type": {
+      "type": "enumeration",
+      "enum": [
+        "give",
+        "get",
+        "percentage"
+      ]
+    },
+    "give_pm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "p2p.pm-pointer",
+      "required": true
+    },
+    "get_pm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "p2p.pm-pointer",
+      "required": true
+    },
+    "side": {
+      "type": "enumeration",
+      "enum": [
+        "give",
+        "get"
+      ],
+      "default": "get"
+    },
+    "city_from": {
+      "type": "string"
+    },
+    "city_to": {
+      "type": "string"
+    }
+  }
+}

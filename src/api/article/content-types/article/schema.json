@@ -109,14 +109,19 @@
       },
       "type": "richtext"
     },
-    "isBlog": {
+    "type": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "boolean",
-      "default": false
+      "type": "enumeration",
+      "enum": [
+        "generated",
+        "blog",
+        "page"
+      ],
+      "default": "generated"
     }
   }
 }

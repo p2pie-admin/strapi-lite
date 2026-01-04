@@ -10,29 +10,23 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "question": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "string",
       "required": true
     },
     "response": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "text",
       "required": true
+    },
+    "x_faq_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::x-faq-category.x-faq-category",
+      "inversedBy": "x_faqs"
     }
   }
 }

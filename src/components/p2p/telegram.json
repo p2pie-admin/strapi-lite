@@ -11,7 +11,8 @@
       "maxLength": 50,
       "required": false,
       "minLength": 3,
-      "unique": false
+      "unique": true,
+      "regex": "/^@?[A-Za-z0-9_]{5,32}$/"
     },
     "chat_id": {
       "type": "string",

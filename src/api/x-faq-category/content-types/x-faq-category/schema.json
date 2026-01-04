@@ -10,53 +10,28 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "code": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
+      "pluginOptions": {},
       "type": "string",
       "required": true
     },
     "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "text"
     },
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "x_faqs": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::x-faq.x-faq"
+      "pluginOptions": {}
     },
     "color": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "type": "enumeration",
       "enum": [
         "gray",
@@ -80,6 +55,16 @@
         "dark_purple",
         "dark_pink"
       ]
+    },
+    "rank": {
+      "pluginOptions": {},
+      "type": "integer"
+    },
+    "x_faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::x-faq.x-faq",
+      "mappedBy": "x_faq_category"
     }
   }
 }

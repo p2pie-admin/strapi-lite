@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_makers",
+  "info": {
+    "singularName": "p2p-maker",
+    "pluralName": "p2p-makers",
+    "displayName": "p2p maker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "telegram_username": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "telegram_name": {
+      "type": "string",
+      "maxLength": 54
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "telegram_chat_id": {
+      "type": "string",
+      "unique": true
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "p_2_p_maker"
+    },
+    "p_2_p_offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::p2p-offer.p2p-offer"
+    },
+    "coordinates": {
+      "type": "string"
+    },
+    "exchanger_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exchanger-tag.exchanger-tag"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 1000,
+      "minLength": 3
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "paused",
+        "suspended",
+        "disabled",
+        "blacklist",
+        "draft",
+        "draft2"
+      ],
+      "default": "active"
+    },
+    "telegram_post_link": {
+      "type": "string"
+    }
+  }
+}
