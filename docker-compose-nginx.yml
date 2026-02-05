@@ -127,32 +127,12 @@ services:
     depends_on:
       - strapi
 
-  npmplus:
-    container_name: npmplus
-    image: ghcr.io/zoeyvid/npmplus:latest
-    restart: unless-stopped
-    environment:
-      TZ: Europe/Moscow
-    env_file:
-      - "${PWD}/.env.npmplus"
-    ports:
-      - "80:80"
-      - "81:81"
-      - "443:443"
-    volumes:
-      - npmplus_data:/data
-      - npmplus_letsencrypt:/etc/letsencrypt
-    networks:
-      - my-network
-
 volumes:
   front_next_cache:
   redis_data:
   data:
   public:
   config_sync:
-  npmplus_data:
-  npmplus_letsencrypt:
 
 networks:
   my-network:

@@ -121,7 +121,7 @@
         "blog",
         "page"
       ],
-      "default": "generated"
+      "default": "blog"
     }
   }
 }

@@ -32,7 +32,7 @@
     },
     "fee_amount": {
       "type": "float",
-      "min": 0
+      "min": -80
     },
     "top_parameters": {
       "type": "relation",
@@ -45,19 +45,8 @@
         "give",
         "get",
         "percentage"
-      ]
-    },
-    "give_pm": {
-      "type": "component",
-      "repeatable": false,
-      "component": "p2p.pm-pointer",
-      "required": true
-    },
-    "get_pm": {
-      "type": "component",
-      "repeatable": false,
-      "component": "p2p.pm-pointer",
-      "required": true
+      ],
+      "default": "percentage"
     },
     "side": {
       "type": "enumeration",
@@ -72,6 +61,14 @@
     },
     "city_to": {
       "type": "string"
+    },
+    "dir": {
+      "type": "string",
+      "required": true
+    },
+    "follow_market": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

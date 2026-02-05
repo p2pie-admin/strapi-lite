@@ -12,13 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "telegram_username": {
-      "type": "string",
-      "unique": true,
-      "required": true,
-      "minLength": 3,
-      "maxLength": 64
-    },
     "telegram_name": {
       "type": "string",
       "maxLength": 54
@@ -41,7 +34,7 @@
       "target": "api::review.review",
       "mappedBy": "p_2_p_maker"
     },
-    "p_2_p_offers": {
+    "offers": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::p2p-offer.p2p-offer"
@@ -74,6 +67,52 @@
     },
     "telegram_post_link": {
       "type": "string"
+    },
+    "telegram_username": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "deals_finished": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "deals_canceled": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "rating": {
+      "type": "decimal",
+      "max": 5,
+      "min": 2,
+      "required": true,
+      "default": 3
+    },
+    "need_ai_helper": {
+      "type": "boolean",
+      "default": true
+    },
+    "deposit_usd": {
+      "type": "float",
+      "min": 100
+    },
+    "top_parameters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::top-parameter.top-parameter"
+    },
+    "coordinates_radius_km": {
+      "type": "integer",
+      "default": 1,
+      "min": 0,
+      "max": 100
+    },
+    "p2p_level": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::p2p-level.p2p-level"
     }
   }
 }

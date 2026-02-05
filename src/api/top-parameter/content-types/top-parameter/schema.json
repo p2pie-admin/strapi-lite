@@ -28,6 +28,15 @@
     "ru_name": {
       "type": "string",
       "maxLength": 24
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "p2p_maker",
+        "p2p_offer",
+        "exchanger",
+        "dir"
+      ]
     }
   }
 }

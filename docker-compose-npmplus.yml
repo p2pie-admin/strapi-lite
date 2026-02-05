@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  npmplus:
+    container_name: npmplus
+    image: ghcr.io/zoeyvid/npmplus:latest
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Moscow
+    env_file:
+      - .env.npmplus
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - npmplus_data:/data
+    networks:
+      - my-network
+
+volumes:
+  npmplus_data:
+
+networks:
+  my-network:
+    external: true

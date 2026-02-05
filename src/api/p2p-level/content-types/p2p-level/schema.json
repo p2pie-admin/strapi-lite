@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_levels",
+  "info": {
+    "singularName": "p2p-level",
+    "pluralName": "p2p-levels",
+    "displayName": "p2p level",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "level": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 10,
+      "default": 1
+    },
+    "description": {
+      "type": "text"
+    },
+    "limit_online_usd": {
+      "type": "integer",
+      "required": true
+    },
+    "limit_offline_usd": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "deals_needed": {
+      "type": "integer"
+    },
+    "dirs_needed": {
+      "type": "integer"
+    },
+    "deposit_usd": {
+      "type": "integer"
+    },
+    "needed": {
+      "type": "text"
+    }
+  }
+}
