@@ -44,6 +44,9 @@
     },
     "needed": {
       "type": "text"
+    },
+    "amount_needed": {
+      "type": "decimal"
     }
   }
 }

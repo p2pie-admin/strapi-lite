@@ -32,6 +32,11 @@
     },
     "rank": {
       "type": "integer"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
