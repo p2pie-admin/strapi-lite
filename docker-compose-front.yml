@@ -125,6 +125,24 @@ services:
     depends_on:
       - strapi
 
+  p2p_telegram_bot:
+    container_name: p2p_telegram_bot
+    image: darkshrine/p2pie_trading_bot:latest
+    build:
+      context: ../bot
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - ../bot/.env
+    environment:
+      FRONT_CONFIRM_URL: "http://front:3000/api/telegram/confirm"
+    ports:
+      - "3005:3005"
+    depends_on:
+      - front
+    networks:
+      - my-network
+
   cloudflared:
     container_name: cloudflared
     image: cloudflare/cloudflared:latest

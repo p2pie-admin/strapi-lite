@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_conditions",
+  "info": {
+    "singularName": "p2p-condition",
+    "pluralName": "p2p-conditions",
+    "displayName": "p2p condition"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -42,11 +42,13 @@
     "deposit_usd": {
       "type": "integer"
     },
-    "needed": {
-      "type": "text"
-    },
     "amount_needed": {
       "type": "decimal"
+    },
+    "p2p_conditions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::p2p-condition.p2p-condition"
     }
   }
 }

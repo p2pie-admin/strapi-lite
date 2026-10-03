@@ -37,6 +37,9 @@
         "exchanger",
         "dir"
       ]
+    },
+    "filters": {
+      "type": "text"
     }
   }
 }

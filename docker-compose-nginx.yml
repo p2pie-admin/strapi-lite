@@ -4,25 +4,42 @@ services:
       context: ./front
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_NAME: "${NEXT_PUBLIC_NAME}"
-        NEXT_PUBLIC_SITE_LANG: "${NEXT_PUBLIC_SITE_LANG}"
-        NEXT_PUBLIC_PRERENDER_LIMIT: "${NEXT_PUBLIC_PRERENDER_LIMIT}"
-        NEXT_PUBLIC_BASE: "${NEXT_PUBLIC_BASE}"
-        NEXT_PUBLIC_INDEX: "${NEXT_PUBLIC_INDEX}"
-        NEXT_PUBLIC_RATES_MIN: "${NEXT_PUBLIC_RATES_MIN}"
-        NEXT_PUBLIC_RATES_RENDER_MIN: "${NEXT_PUBLIC_RATES_RENDER_MIN}"
-        NEXT_PUBLIC_TELEGRAM_SUPPORT: "${NEXT_PUBLIC_TELEGRAM_SUPPORT}"
-        NEXT_PUBLIC_TELEGRAM_BOT: "${NEXT_PUBLIC_TELEGRAM_BOT}"
-        NEXT_PUBLIC_TELEGRAM_CHAT: "${NEXT_PUBLIC_TELEGRAM_CHAT}"
-        NEXT_PUBLIC_GOOGLE_MAPS_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_KEY}"
-        USE_INTERNAL: "${USE_INTERNAL}"
-        INTERNAL_CMS_URL: "${INTERNAL_CMS_URL}"
-        INTERNAL_SERVER_URL: "${INTERNAL_SERVER_URL}"
-        INTERNAL_CONVERTER_URL: "${INTERNAL_CONVERTER_URL}"
+        NEXT_PUBLIC_NAME: "${NEXT_PUBLIC_NAME:-}"
+        NEXT_PUBLIC_SITE_LANG: "${NEXT_PUBLIC_SITE_LANG:-}"
+        NEXT_PUBLIC_PRERENDER_LIMIT: "${NEXT_PUBLIC_PRERENDER_LIMIT:-}"
+        NEXT_PUBLIC_BASE: "${NEXT_PUBLIC_BASE:-p2pie.com}"
+        NEXT_PUBLIC_INDEX: "${NEXT_PUBLIC_INDEX:-0}"
+        NEXT_PUBLIC_RATES_MIN: "${NEXT_PUBLIC_RATES_MIN:-}"
+        NEXT_PUBLIC_RATES_RENDER_MIN: "${NEXT_PUBLIC_RATES_RENDER_MIN:-}"
+        NEXT_PUBLIC_MIN_RATES_MAP: "${NEXT_PUBLIC_MIN_RATES_MAP:-}"
+        NEXT_PUBLIC_TELEGRAM_SUPPORT: "${NEXT_PUBLIC_TELEGRAM_SUPPORT:-}"
+        NEXT_PUBLIC_TELEGRAM_BOT: "${NEXT_PUBLIC_TELEGRAM_BOT:-}"
+        NEXT_PUBLIC_TELEGRAM_CHAT: "${NEXT_PUBLIC_TELEGRAM_CHAT:-}"
+        NEXT_PUBLIC_GOOGLE_MAPS_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_KEY:-}"
+        NEXT_PUBLIC_BOT_USERNAME: "${NEXT_PUBLIC_BOT_USERNAME:-}"
+        NEXT_PUBLIC_BOT_START_SECRET: "${NEXT_PUBLIC_BOT_START_SECRET:-}"
+        NEXT_PUBLIC_BOT_ALWAYS_VERIFY: "${NEXT_PUBLIC_BOT_ALWAYS_VERIFY:-}"
+        NEXT_PUBLIC_TELEGRAM_VERIFY_URL: "${NEXT_PUBLIC_TELEGRAM_VERIFY_URL:-}"
+        NEXT_PUBLIC_TELEGRAM_VERIFY_BY_SLUG_URL: "${NEXT_PUBLIC_TELEGRAM_VERIFY_BY_SLUG_URL:-}"
+        NEXT_PUBLIC_ALLOW_CRAWLERS: "${NEXT_PUBLIC_ALLOW_CRAWLERS:-}"
+        NEXT_PUBLIC_COINGECKO_URL: "${NEXT_PUBLIC_COINGECKO_URL:-}"
+        SITE_URL: "${SITE_URL:-}"
+        DEBUG_EXCHANGER_MAP: "${DEBUG_EXCHANGER_MAP:-}"
+        STRAPI_AUTH_IDENTIFIER: "${STRAPI_AUTH_IDENTIFIER:-}"
+        STRAPI_AUTH_PASSWORD: "${STRAPI_AUTH_PASSWORD:-}"
+        # Build should use public URLs unless you explicitly override.
+        USE_INTERNAL: "${FRONT_BUILD_USE_INTERNAL:-false}"
+        INTERNAL_CMS_URL: "${INTERNAL_CMS_URL:-}"
+        INTERNAL_SERVER_URL: "${INTERNAL_SERVER_URL:-}"
+        INTERNAL_CONVERTER_URL: "${INTERNAL_CONVERTER_URL:-}"
     env_file:
       - .env
     environment:
-      USE_INTERNAL: "${USE_INTERNAL}"
+      DEBUG_EXCHANGER_MAP: "${DEBUG_EXCHANGER_MAP:-}"
+      USE_INTERNAL: "${USE_INTERNAL:-false}"
+      INTERNAL_CMS_URL: "${INTERNAL_CMS_URL:-}"
+      INTERNAL_SERVER_URL: "${INTERNAL_SERVER_URL:-}"
+      INTERNAL_CONVERTER_URL: "${INTERNAL_CONVERTER_URL:-}"
     ports:
       - "3000:3000"
     restart: always
@@ -127,12 +144,57 @@ services:
     depends_on:
       - strapi
 
+  p2p_telegram_bot:
+    container_name: p2p_telegram_bot
+    image: darkshrine/p2pie_trading_bot:latest
+    build:
+      context: ../bot
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - ../bot/.env
+    environment:
+      FRONT_CONFIRM_URL: "http://front:3000/api/telegram/confirm"
+    ports:
+      - "3005:3005"
+    depends_on:
+      - front
+    networks:
+      - my-network
+
+  telegram_channels_bot:
+    container_name: telegram_channels_bot
+    image: darkshrine/telegram-channels-bot:latest
+    restart: always
+    env_file: .env
+    environment:
+      BOT_TOKEN: ${TELEGRAM_CHANNELS_BOT_TOKEN}
+      BOT_NAME: ${TELEGRAM_CHANNELS_BOT_NAME}
+      PORT: ${TELEGRAM_CHANNELS_PORT}
+      NEXT_PUBLIC_BASE: ${NEXT_PUBLIC_BASE}
+      NEXT_PUBLIC_INDEX: ${NEXT_PUBLIC_INDEX}
+      USE_INTERNAL: "true"
+      CMS_GRAPHQL_URL: "http://strapi:1337/graphql"
+      SERVER_BASE_URL: "http://server:5000"
+      INTERNAL_CMS_URL: ${INTERNAL_CMS_URL}
+      INTERNAL_SERVER_URL: ${INTERNAL_SERVER_URL}
+    ports:
+      - "3030:3030"
+    volumes:
+      - telegram_channels_generated:/app/generated
+    depends_on:
+      - strapi
+      - server
+    networks:
+      - my-network
+
 volumes:
   front_next_cache:
   redis_data:
   data:
   public:
   config_sync:
+  telegram_channels_generated:
 
 networks:
   my-network:

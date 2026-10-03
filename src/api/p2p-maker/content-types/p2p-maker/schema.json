@@ -113,6 +113,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::p2p-level.p2p-level"
+    },
+    "p2p_conditions_completed": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::p2p-condition.p2p-condition"
     }
   }
 }
