@@ -125,6 +125,9 @@
     },
     "external_date": {
       "type": "datetime"
+    },
+    "review_date": {
+      "type": "datetime"
     }
   }
 }
