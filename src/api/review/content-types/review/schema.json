@@ -110,6 +110,21 @@
       "relation": "manyToOne",
       "target": "api::p2p-maker.p2p-maker",
       "inversedBy": "reviews"
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "external_link": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "external_id": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "external_date": {
+      "type": "datetime"
     }
   }
 }
