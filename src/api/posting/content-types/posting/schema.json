@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "postings",
+  "info": {
+    "singularName": "posting",
+    "pluralName": "postings",
+    "displayName": "posting",
+    "description": "One post of one story on one platform (backlink ledger); synced from ~/p2pie-ops/publish/<slug>/meta.yaml"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "story": { "type": "string", "required": true },
+    "title": { "type": "string" },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["investigation", "partner_post", "report", "warmup", "news"],
+      "default": "investigation"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["queued", "posted", "failed", "deleted"],
+      "default": "queued"
+    },
+    "platform": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::posting-platform.posting-platform",
+      "inversedBy": "postings"
+    },
+    "variant": { "type": "string" },
+    "url": { "type": "string" },
+    "posted_at": { "type": "date" },
+    "manual": { "type": "boolean", "default": false },
+    "exchanger_domain": { "type": "string" },
+    "price_usdt": { "type": "decimal" },
+    "paid_tx": { "type": "string" },
+    "uid": { "type": "string", "unique": true },
+    "notes": { "type": "text" }
+  }
+}

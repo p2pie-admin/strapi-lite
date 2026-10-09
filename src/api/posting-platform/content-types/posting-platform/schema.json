@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posting_platforms",
+  "info": {
+    "singularName": "posting-platform",
+    "pluralName": "posting-platforms",
+    "displayName": "posting platform",
+    "description": "Where p2pie publishes investigations and paid partner posts; status of our account and the last post"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "code": { "type": "string", "required": true, "unique": true },
+    "account_status": {
+      "type": "enumeration",
+      "enum": ["active", "needs_account", "needs_credits", "needs_owner_action", "blocked", "not_planned"],
+      "default": "needs_account",
+      "required": true
+    },
+    "automation": {
+      "type": "enumeration",
+      "enum": ["auto_api", "semi_auto_browser", "manual"],
+      "default": "manual",
+      "required": true
+    },
+    "enabled": { "type": "boolean", "default": false },
+    "for_reports": { "type": "boolean", "default": true },
+    "for_partner_posts": { "type": "boolean", "default": false },
+    "language": { "type": "enumeration", "enum": ["ru", "en", "ru_en"], "default": "ru" },
+    "profile_url": { "type": "string" },
+    "account_handle": { "type": "string" },
+    "credentials_env": { "type": "string" },
+    "last_post_at": { "type": "date" },
+    "last_post_url": { "type": "string" },
+    "posts_count": { "type": "integer", "default": 0 },
+    "max_length": { "type": "integer" },
+    "how_to_post": { "type": "text" },
+    "owner_todo": { "type": "text" },
+    "notes": { "type": "text" },
+    "sort": { "type": "integer", "default": 100 },
+    "postings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::posting.posting",
+      "mappedBy": "platform"
+    }
+  }
+}
