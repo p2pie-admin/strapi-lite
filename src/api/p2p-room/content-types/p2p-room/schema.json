@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_rooms",
+  "info": {
+    "singularName": "p2p-room",
+    "pluralName": "p2p-rooms",
+    "displayName": "p2p room",
+    "description": "Pool of Telegram groups where the trade bot is admin; one busy room per deal"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "chat_id": { "type": "string", "required": true, "unique": true },
+    "title": { "type": "string" },
+    "status": { "type": "enumeration", "enum": ["free", "busy", "disabled"], "default": "free" },
+    "deal_code": { "type": "string" },
+    "message_ids": { "type": "json" },
+    "invite_links": { "type": "json" },
+    "bot_rights_ok": { "type": "boolean", "default": false }
+  }
+}

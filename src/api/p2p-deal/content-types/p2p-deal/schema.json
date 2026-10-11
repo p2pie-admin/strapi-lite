@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_deals",
+  "info": {
+    "singularName": "p2p-deal",
+    "pluralName": "p2p-deals",
+    "displayName": "p2p deal",
+    "description": "One P2P deal run by the trade bot in a Telegram deal room (no custody, step ladder)"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "code": { "type": "string", "required": true, "unique": true },
+    "status": {
+      "type": "enumeration",
+      "enum": ["requested", "accepted", "room", "requisites", "in_progress", "completed", "canceled", "disputed", "expired"],
+      "default": "requested"
+    },
+    "test": { "type": "boolean", "default": false },
+    "maker_id": { "type": "integer" },
+    "maker_username": { "type": "string" },
+    "maker_tg_id": { "type": "string" },
+    "client_tg_id": { "type": "string" },
+    "client_username": { "type": "string" },
+    "offer_id": { "type": "integer" },
+    "dir": { "type": "string" },
+    "give_code": { "type": "string" },
+    "get_code": { "type": "string" },
+    "rate": { "type": "decimal" },
+    "amount_give": { "type": "decimal" },
+    "amount_get": { "type": "decimal" },
+    "amount_usd": { "type": "decimal" },
+    "steps_total": { "type": "integer", "default": 1 },
+    "step_current": { "type": "integer", "default": 0 },
+    "first_payer": { "type": "enumeration", "enum": ["client", "maker"], "default": "client" },
+    "room_chat_id": { "type": "string" },
+    "requisites": { "type": "json" },
+    "steps": { "type": "json" },
+    "flags": { "type": "json" },
+    "log": { "type": "json" },
+    "rating_by_client": { "type": "integer" },
+    "rating_by_maker": { "type": "integer" },
+    "comment_by_client": { "type": "text" },
+    "cancel_reason": { "type": "text" },
+    "finished_at": { "type": "datetime" },
+    "deadline_at": { "type": "datetime" }
+  }
+}

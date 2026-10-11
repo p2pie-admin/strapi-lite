@@ -127,6 +127,11 @@
     "rank": {
       "type": "integer",
       "private": true
+    },
+    "sanctioned": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

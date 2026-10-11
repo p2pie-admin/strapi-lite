@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p2p_blacklists",
+  "info": {
+    "singularName": "p2p-blacklist",
+    "pluralName": "p2p-blacklists",
+    "displayName": "p2p blacklist",
+    "description": "Banned Telegram ids, wallets and card hashes for P2P deals"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "kind": { "type": "enumeration", "enum": ["tg_id", "wallet", "card_hash", "username"], "required": true },
+    "value": { "type": "string", "required": true },
+    "reason": { "type": "text" },
+    "deal_code": { "type": "string" }
+  }
+}
