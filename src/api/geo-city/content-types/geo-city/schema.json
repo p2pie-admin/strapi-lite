@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "geo_cities",
+  "info": {
+    "singularName": "geo-city",
+    "pluralName": "geo-cities",
+    "displayName": "geo-city",
+    "description": "Cities with coordinates for the maker service-area map (search by Russian or English name). Not used for SEO city pages."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ru_name": { "type": "string", "required": true },
+    "en_name": { "type": "string", "required": true },
+    "ru_country": { "type": "string" },
+    "en_country": { "type": "string" },
+    "country_code": { "type": "string", "maxLength": 2 },
+    "lat": { "type": "float", "required": true },
+    "lng": { "type": "float", "required": true },
+    "population": { "type": "integer" },
+    "is_capital": { "type": "boolean", "default": false },
+    "geonames_id": { "type": "integer", "unique": true }
+  }
+}

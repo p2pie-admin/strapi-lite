@@ -17,10 +17,21 @@ const reveals = (value, username) => {
   return Boolean(v && u && (v === u || (u.length >= 4 && v.includes(u))));
 };
 
+// Makers write their own description; any mention of the username (or a t.me link to it) becomes the literal @*****.
+const escapeRe = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const maskDescription = (data, username) => {
+  if (typeof data.description !== 'string' || !username || String(username).length < 3) return;
+  const u = escapeRe(String(username).replace(/^@/, ''));
+  data.description = data.description
+    .replace(new RegExp(`(https?:\\/\\/)?(www\\.)?(t\\.me|telegram\\.me)\\/${u}\\b`, 'gi'), '@*****')
+    .replace(new RegExp(`@?${u}`, 'gi'), '@*****');
+};
+
 const check = async (data, current, id) => {
   const username = data.telegram_username !== undefined ? data.telegram_username : current && current.telegram_username;
   const slug = data.slug !== undefined ? data.slug : current && current.slug;
   const name = data.telegram_name !== undefined ? data.telegram_name : current && current.telegram_name;
+  maskDescription(data, username);
   if (reveals(slug, username)) throw new ApplicationError('slug must not match the Telegram username');
   if (reveals(name, username)) throw new ApplicationError('name must not match the Telegram username');
   if (data.slug !== undefined && data.slug !== null) {
@@ -46,7 +57,13 @@ module.exports = {
   },
   async beforeUpdate(event) {
     const { data, where } = event.params;
-    if (data.slug === undefined && data.telegram_name === undefined && data.telegram_username === undefined) return;
+    if (
+      data.slug === undefined &&
+      data.telegram_name === undefined &&
+      data.telegram_username === undefined &&
+      data.description === undefined
+    )
+      return;
     const current = where && where.id ? await strapi.db.query(UID).findOne({ where: { id: where.id } }) : null;
     await check(data, current, current && current.id);
   },
