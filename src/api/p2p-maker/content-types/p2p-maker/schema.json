@@ -12,6 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 32
+    },
     "telegram_name": {
       "type": "string",
       "maxLength": 54
