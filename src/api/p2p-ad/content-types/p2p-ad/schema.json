@@ -37,6 +37,15 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "en_title": {
+      "type": "string"
+    },
+    "en_description": {
+      "type": "text"
+    },
+    "en_details": {
+      "type": "richtext"
     }
   }
 }

@@ -49,6 +49,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::p2p-condition.p2p-condition"
+    },
+    "en_title": {
+      "type": "string"
+    },
+    "en_description": {
+      "type": "text"
     }
   }
 }

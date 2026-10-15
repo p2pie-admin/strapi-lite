@@ -27,6 +27,12 @@
       "relation": "manyToOne",
       "target": "api::x-faq-category.x-faq-category",
       "inversedBy": "x_faqs"
+    },
+    "en_question": {
+      "type": "string"
+    },
+    "en_response": {
+      "type": "text"
     }
   }
 }

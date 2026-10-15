@@ -65,6 +65,9 @@
       "relation": "oneToMany",
       "target": "api::x-faq.x-faq",
       "mappedBy": "x_faq_category"
+    },
+    "en_description": {
+      "type": "text"
     }
   }
 }

@@ -44,6 +44,13 @@
         "    dark_purple",
         "    dark_pink"
       ]
+    },
+    "en_name": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "en_description": {
+      "type": "text"
     }
   }
 }
