@@ -8,8 +8,8 @@ const { ApplicationError } = require('@strapi/utils').errors;
  */
 const UID = 'api::p2p-maker.p2p-maker';
 const norm = (value) => String(value || '').toLowerCase().replace(/^@/, '').replace(/[^a-z0-9а-яё]/g, '');
-const LETTERS = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
-const randomSlug = () => Array.from({ length: 6 }, () => LETTERS[Math.floor(Math.random() * LETTERS.length)]).join('');
+// Public id = 8 random digits: letters could spell (or be taken for) a nickname, digits cannot (owner 2026-10-16).
+const randomSlug = () => String(10000000 + Math.floor(Math.random() * 90000000));
 
 const reveals = (value, username) => {
   const v = norm(value);
@@ -35,7 +35,7 @@ const check = async (data, current, id) => {
   if (reveals(slug, username)) throw new ApplicationError('slug must not match the Telegram username');
   if (reveals(name, username)) throw new ApplicationError('name must not match the Telegram username');
   if (data.slug !== undefined && data.slug !== null) {
-    if (!/^[A-Za-z0-9_]{3,32}$/.test(data.slug)) throw new ApplicationError('slug: 3-32 latin letters, digits or _');
+    if (!/^[1-9][0-9]{7}$/.test(String(data.slug))) throw new ApplicationError('slug: 8 random digits');
     const twin = await strapi.db.query(UID).findOne({ where: { slug: { $eqi: data.slug }, ...(id ? { id: { $ne: id } } : {}) } });
     if (twin) throw new ApplicationError('slug is taken');
   }
