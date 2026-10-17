@@ -57,6 +57,10 @@
       "maxLength": 1000,
       "minLength": 3
     },
+    "en_description": {
+      "type": "text",
+      "maxLength": 2000
+    },
     "status": {
       "type": "enumeration",
       "enum": [
